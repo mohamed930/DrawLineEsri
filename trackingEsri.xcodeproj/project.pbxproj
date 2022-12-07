@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B49EC11C06EFCB69AB4D402 /* Pods_trackingEsri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33339151202147B7BDF93831 /* Pods_trackingEsri.framework */; };
 		D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A1294107B900331AD5 /* AppDelegate.swift */; };
 		D3F1B3A4294107B900331AD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A3294107B900331AD5 /* SceneDelegate.swift */; };
 		D3F1B3A6294107B900331AD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A5294107B900331AD5 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33339151202147B7BDF93831 /* Pods_trackingEsri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trackingEsri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B109ADB9F01CAE1498FAEE1 /* Pods-trackingEsri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trackingEsri.release.xcconfig"; path = "Target Support Files/Pods-trackingEsri/Pods-trackingEsri.release.xcconfig"; sourceTree = "<group>"; };
+		829DEB84850843C5C43C69C1 /* Pods-trackingEsri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trackingEsri.debug.xcconfig"; path = "Target Support Files/Pods-trackingEsri/Pods-trackingEsri.debug.xcconfig"; sourceTree = "<group>"; };
 		D3F1B39E294107B900331AD5 /* trackingEsri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trackingEsri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F1B3A1294107B900331AD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3F1B3A3294107B900331AD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B49EC11C06EFCB69AB4D402 /* Pods_trackingEsri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29C5FBC705F1C07EE92AD99B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33339151202147B7BDF93831 /* Pods_trackingEsri.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BCD004DD18BCAABDA56C4E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				829DEB84850843C5C43C69C1 /* Pods-trackingEsri.debug.xcconfig */,
+				6B109ADB9F01CAE1498FAEE1 /* Pods-trackingEsri.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D3F1B395294107B900331AD5 = {
 			isa = PBXGroup;
 			children = (
 				D3F1B3A0294107B900331AD5 /* trackingEsri */,
 				D3F1B39F294107B900331AD5 /* Products */,
+				4BCD004DD18BCAABDA56C4E3 /* Pods */,
+				29C5FBC705F1C07EE92AD99B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3F1B3B2294107BB00331AD5 /* Build configuration list for PBXNativeTarget "trackingEsri" */;
 			buildPhases = (
+				FEC062401E368A39045FA7E6 /* [CP] Check Pods Manifest.lock */,
 				D3F1B39A294107B900331AD5 /* Sources */,
 				D3F1B39B294107B900331AD5 /* Frameworks */,
 				D3F1B39C294107B900331AD5 /* Resources */,
+				C5956DE4B0101616DC99D7B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +191,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C5956DE4B0101616DC99D7B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trackingEsri/Pods-trackingEsri-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trackingEsri/Pods-trackingEsri-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-trackingEsri/Pods-trackingEsri-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEC062401E368A39045FA7E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trackingEsri-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3F1B39A294107B900331AD5 /* Sources */ = {
@@ -314,6 +383,7 @@
 		};
 		D3F1B3B3294107BB00331AD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 829DEB84850843C5C43C69C1 /* Pods-trackingEsri.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -343,6 +413,7 @@
 		};
 		D3F1B3B4294107BB00331AD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B109ADB9F01CAE1498FAEE1 /* Pods-trackingEsri.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
