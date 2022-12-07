@@ -14,6 +14,7 @@
 		D3F1B3A9294107B900331AD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F1B3A7294107B900331AD5 /* Main.storyboard */; };
 		D3F1B3AB294107BB00331AD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F1B3AA294107BB00331AD5 /* Assets.xcassets */; };
 		D3F1B3AE294107BB00331AD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F1B3AC294107BB00331AD5 /* LaunchScreen.storyboard */; };
+		D3F1B3BB29410B4500331AD5 /* pointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3BA29410B4500331AD5 /* pointModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D3F1B3AA294107BB00331AD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3F1B3AD294107BB00331AD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3F1B3AF294107BB00331AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3F1B3BA29410B4500331AD5 /* pointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,6 @@
 				829DEB84850843C5C43C69C1 /* Pods-trackingEsri.debug.xcconfig */,
 				6B109ADB9F01CAE1498FAEE1 /* Pods-trackingEsri.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +84,7 @@
 			children = (
 				D3F1B3B5294107CB00331AD5 /* AppDelegate */,
 				D3F1B3B8294107FF00331AD5 /* launchSxreen */,
+				D3F1B3B929410B3100331AD5 /* Model */,
 				D3F1B3B6294107EE00331AD5 /* Controller */,
 				D3F1B3B7294107F800331AD5 /* Assists */,
 			);
@@ -122,6 +124,14 @@
 				D3F1B3AC294107BB00331AD5 /* LaunchScreen.storyboard */,
 			);
 			path = launchSxreen;
+			sourceTree = "<group>";
+		};
+		D3F1B3B929410B3100331AD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3F1B3BA29410B4500331AD5 /* pointModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +251,7 @@
 			files = (
 				D3F1B3A6294107B900331AD5 /* ViewController.swift in Sources */,
 				D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */,
+				D3F1B3BB29410B4500331AD5 /* pointModel.swift in Sources */,
 				D3F1B3A4294107B900331AD5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
