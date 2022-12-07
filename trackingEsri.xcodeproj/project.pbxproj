@@ -56,15 +56,47 @@
 		D3F1B3A0294107B900331AD5 /* trackingEsri */ = {
 			isa = PBXGroup;
 			children = (
-				D3F1B3A1294107B900331AD5 /* AppDelegate.swift */,
-				D3F1B3A3294107B900331AD5 /* SceneDelegate.swift */,
-				D3F1B3A5294107B900331AD5 /* ViewController.swift */,
-				D3F1B3A7294107B900331AD5 /* Main.storyboard */,
-				D3F1B3AA294107BB00331AD5 /* Assets.xcassets */,
-				D3F1B3AC294107BB00331AD5 /* LaunchScreen.storyboard */,
-				D3F1B3AF294107BB00331AD5 /* Info.plist */,
+				D3F1B3B5294107CB00331AD5 /* AppDelegate */,
+				D3F1B3B8294107FF00331AD5 /* launchSxreen */,
+				D3F1B3B6294107EE00331AD5 /* Controller */,
+				D3F1B3B7294107F800331AD5 /* Assists */,
 			);
 			path = trackingEsri;
+			sourceTree = "<group>";
+		};
+		D3F1B3B5294107CB00331AD5 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D3F1B3A1294107B900331AD5 /* AppDelegate.swift */,
+				D3F1B3A3294107B900331AD5 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D3F1B3B6294107EE00331AD5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3F1B3A5294107B900331AD5 /* ViewController.swift */,
+				D3F1B3A7294107B900331AD5 /* Main.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3F1B3B7294107F800331AD5 /* Assists */ = {
+			isa = PBXGroup;
+			children = (
+				D3F1B3AA294107BB00331AD5 /* Assets.xcassets */,
+				D3F1B3AF294107BB00331AD5 /* Info.plist */,
+			);
+			path = Assists;
+			sourceTree = "<group>";
+		};
+		D3F1B3B8294107FF00331AD5 /* launchSxreen */ = {
+			isa = PBXGroup;
+			children = (
+				D3F1B3AC294107BB00331AD5 /* LaunchScreen.storyboard */,
+			);
+			path = launchSxreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,12 +321,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4YZSY77G5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = trackingEsri/Info.plist;
+				INFOPLIST_FILE = trackingEsri/Assists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +337,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,12 +350,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4YZSY77G5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = trackingEsri/Info.plist;
+				INFOPLIST_FILE = trackingEsri/Assists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +366,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
