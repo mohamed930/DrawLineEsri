@@ -2,4 +2,5 @@
 
 Tracking In Esri Map SDK
 
-/Volumes/Medo/Development/Test iOS/trackingEsri/317227326_879312299867941_4541385816997346879_n.jpg
+![image](https://user-images.githubusercontent.com/47215527/206269175-0e6c77eb-c80f-4002-8cc6-e7934d7bde51.png)
+
