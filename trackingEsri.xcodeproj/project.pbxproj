@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8B49EC11C06EFCB69AB4D402 /* Pods_trackingEsri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33339151202147B7BDF93831 /* Pods_trackingEsri.framework */; };
+		D31F786F2942603800E02FD5 /* GeoCoderMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */; };
 		D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A1294107B900331AD5 /* AppDelegate.swift */; };
 		D3F1B3A4294107B900331AD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A3294107B900331AD5 /* SceneDelegate.swift */; };
-		D3F1B3A6294107B900331AD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A5294107B900331AD5 /* ViewController.swift */; };
+		D3F1B3A6294107B900331AD5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A5294107B900331AD5 /* MapViewController.swift */; };
 		D3F1B3A9294107B900331AD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F1B3A7294107B900331AD5 /* Main.storyboard */; };
 		D3F1B3AB294107BB00331AD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F1B3AA294107BB00331AD5 /* Assets.xcassets */; };
 		D3F1B3AE294107BB00331AD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F1B3AC294107BB00331AD5 /* LaunchScreen.storyboard */; };
@@ -21,10 +22,11 @@
 		33339151202147B7BDF93831 /* Pods_trackingEsri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trackingEsri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B109ADB9F01CAE1498FAEE1 /* Pods-trackingEsri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trackingEsri.release.xcconfig"; path = "Target Support Files/Pods-trackingEsri/Pods-trackingEsri.release.xcconfig"; sourceTree = "<group>"; };
 		829DEB84850843C5C43C69C1 /* Pods-trackingEsri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trackingEsri.debug.xcconfig"; path = "Target Support Files/Pods-trackingEsri/Pods-trackingEsri.debug.xcconfig"; sourceTree = "<group>"; };
+		D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoderMapViewController.swift; sourceTree = "<group>"; };
 		D3F1B39E294107B900331AD5 /* trackingEsri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trackingEsri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F1B3A1294107B900331AD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3F1B3A3294107B900331AD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D3F1B3A5294107B900331AD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3F1B3A5294107B900331AD5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D3F1B3A8294107B900331AD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3F1B3AA294107BB00331AD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3F1B3AD294107BB00331AD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,7 +105,8 @@
 		D3F1B3B6294107EE00331AD5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D3F1B3A5294107B900331AD5 /* ViewController.swift */,
+				D3F1B3A5294107B900331AD5 /* MapViewController.swift */,
+				D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */,
 				D3F1B3A7294107B900331AD5 /* Main.storyboard */,
 			);
 			path = Controller;
@@ -249,7 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3F1B3A6294107B900331AD5 /* ViewController.swift in Sources */,
+				D3F1B3A6294107B900331AD5 /* MapViewController.swift in Sources */,
+				D31F786F2942603800E02FD5 /* GeoCoderMapViewController.swift in Sources */,
 				D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */,
 				D3F1B3BB29410B4500331AD5 /* pointModel.swift in Sources */,
 				D3F1B3A4294107B900331AD5 /* SceneDelegate.swift in Sources */,
