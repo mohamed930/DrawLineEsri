@@ -22,6 +22,7 @@ class GeoCoderMapViewController: UIViewController {
         showMap(ZoomLati: 31.256904, ZoomLong: 32.291706)
     }
     
+    // MARK: TODO: This Method For Initialise the map with Center point
     func showMap(ZoomLati: Double, ZoomLong: Double) {
         // Create an instance of a map with ESRI topographic basemap.
         mapView.map = AGSMap(basemapStyle: .arcGISTopographic)
@@ -33,7 +34,9 @@ class GeoCoderMapViewController: UIViewController {
         // Zoom to a specific extent.
         mapView.setViewpoint(AGSViewpoint(center: AGSPoint(x: ZoomLong, y: ZoomLati, spatialReference: .wgs84()), scale: 5e4))
     }
+    // -------------------------------------------
     
+    // MARK: TODO: This Method for GeoCode Reverse By Esri API.
     private func reverseGeocode(_ point: AGSPoint) {
         // Cancel previous request.
         if cancelable != nil {
@@ -50,13 +53,14 @@ class GeoCoderMapViewController: UIViewController {
         let normalizedPoint = AGSGeometryEngine.normalizeCentralMeridian(of: point) as! AGSPoint
 
         let graphic = graphicForPoint(normalizedPoint)
-        self.graphicsOverlay.graphics.add(graphic)
+        graphicsOverlay.graphics.add(graphic)
 
         // Initialize parameters.
         let reverseGeocodeParameters = AGSReverseGeocodeParameters()
         reverseGeocodeParameters.maxResults = 1
+        
         // Reverse geocode.
-        self.cancelable = self.locatorTask.reverseGeocode(withLocation: normalizedPoint, parameters: reverseGeocodeParameters) { [weak self] (results: [AGSGeocodeResult]?, error: Error?) in
+        cancelable = locatorTask.reverseGeocode(withLocation: normalizedPoint, parameters: reverseGeocodeParameters) { [weak self] (results: [AGSGeocodeResult]?, error: Error?) in
             guard let self = self else { return }
             if let error = error {
                 // Present user canceled error.
@@ -73,8 +77,9 @@ class GeoCoderMapViewController: UIViewController {
             self.graphicsOverlay.graphics.remove(graphic)
         }
     }
+    // -------------------------------------------
     
-    // Method returns a graphic object for the specified point and attributes.
+    // MARK: TODO: Method returns a graphic object for the specified point and attributes.
     private func graphicForPoint(_ point: AGSPoint) -> AGSGraphic {
         let markerImage = UIImage(named: "redPin")!
         let symbol = AGSPictureMarkerSymbol(image: markerImage)
@@ -83,22 +88,26 @@ class GeoCoderMapViewController: UIViewController {
         let graphic = AGSGraphic(geometry: point, symbol: symbol, attributes: [String: AnyObject]())
         return graphic
     }
+    // -------------------------------------------
     
-    // Show callout for the graphic.
+    // MARK: TODO: Show callout for the graphic.
     private func showCalloutForGraphic(_ graphic: AGSGraphic, tapLocation: AGSPoint) {
         // Get the attributes from the graphic and populates the title and detail for the callout.
         let cityString = graphic.attributes["City"] as? String ?? ""
         let addressString = graphic.attributes["Address"] as? String ?? ""
         let stateString = graphic.attributes["State"] as? String ?? ""
-        self.mapView.callout.title = addressString
-        self.mapView.callout.detail = "\(cityString) \(stateString)"
-        self.mapView.callout.isAccessoryButtonHidden = true
-        self.mapView.callout.show(for: graphic, tapLocation: tapLocation, animated: true)
+        mapView.callout.title = addressString
+        mapView.callout.detail = "\(cityString) \(stateString)"
+        mapView.callout.isAccessoryButtonHidden = true
+        mapView.callout.show(for: graphic, tapLocation: tapLocation, animated: true)
     }
+    // -------------------------------------------
 }
 
 extension GeoCoderMapViewController: AGSGeoViewTouchDelegate {
+    // MARK: TODO: This method for Action for Add point and reverse GeoCode.
     func geoView(_ geoView: AGSGeoView, didTapAtScreenPoint screenPoint: CGPoint, mapPoint: AGSPoint) {
         reverseGeocode(mapPoint)
     }
+    // -------------------------------------------
 }
