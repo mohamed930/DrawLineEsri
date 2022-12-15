@@ -73,7 +73,7 @@ class CompersionTwoRoutesViewController: UIViewController {
             }
             
             self.esri.getDefaultParameters()
-            self.mapView.setViewpointCenter(self.esri.points[1], scale: 1750)
+            self.mapView.setViewpointCenter(self.esri.points[1], scale: 3550)
             self.ConfigureLocation()
         }
     }
