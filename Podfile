@@ -8,5 +8,6 @@ target 'trackingEsri' do
   # Pods for trackingEsri
   
   pod 'ArcGIS-Runtime-SDK-iOS'
+  pod 'FirebaseDatabase'
 
 end

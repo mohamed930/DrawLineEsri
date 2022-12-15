@@ -16,7 +16,7 @@ class Esri {
     var routeTask = AGSRouteTask(url: URL(string: "https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World")!)
     var generatedRoute: AGSRoute!
     var routeGraphicsOverlay = AGSGraphicsOverlay()
-    private var points = Array<AGSPoint>()
+    public var points = Array<AGSPoint>()
     
     init(mapView: AGSMapView) {
         self.mapView = mapView
@@ -71,6 +71,27 @@ class Esri {
         }
     }
     
+    func UpdatePoint(pointNumber: String,location: locationModel) {
+        switch pointNumber {
+        case "one":
+            if let graphic = (graphicsOverlay.graphics as? [AGSGraphic])?.first(where: {
+                ($0.attributes["title"] as? String) == "car1"
+            }) {
+                // Move the graphic
+                graphic.geometry = AGSPoint(x: location.long, y: location.lati, spatialReference: .wgs84())
+                points[1] = AGSPoint(x: location.long, y: location.lati, spatialReference: .wgs84())
+                
+//                // Or remove the graphic
+//                overlay.graphics.remove(graphic)
+            }
+            break
+        case "two":
+            break
+        default:
+            print("Not Found!!")
+        }
+    }
+    
     // MARK: TODO: Method returns a graphic object for the specified point and attributes.
     private func graphicForPoint(_ point: AGSPoint,Attribute: [String: AnyObject]) -> AGSGraphic {
         let markerImage = UIImage(named: "redPin")!
@@ -85,10 +106,10 @@ class Esri {
     // MARK: TODO: Show callout for the graphic.
     private func showCalloutForGraphic(_ graphic: AGSGraphic,tapLocation: AGSPoint) {
         let cityString = graphic.attributes["title"] as? String ?? ""
-        let addressString = graphic.attributes["Address"] as? String ?? ""
+       // let addressString = graphic.attributes["Address"] as? String ?? ""
         
         mapView.callout.title = cityString
-        mapView.callout.detail = addressString
+        // mapView.callout.detail = addressString
         
         mapView.callout.isAccessoryButtonHidden = true
         mapView.callout.show(for: graphic, tapLocation: tapLocation, animated: true)
@@ -113,7 +134,7 @@ class Esri {
         routeParameters.returnDirections = true
 
         // clear previous routes
-        // routeGraphicsOverlay.graphics.removeAllObjects()
+        routeGraphicsOverlay.graphics.removeAllObjects()
 
         // clear previous stops
         routeParameters.clearStops()

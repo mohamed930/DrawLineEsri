@@ -69,6 +69,72 @@
             </objects>
             <point key="canvasLocation" x="815.94202898550736" y="95.758928571428569"/>
         </scene>
+        <!--Update View Controller-->
+        <scene sceneID="iM1-vG-7z0">
+            <objects>
+                <viewController storyboardIdentifier="updateViewController" id="xfx-hM-zZs" customClass="updateViewController" customModule="trackingEsri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ju-Yv-QXP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Car Route" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6i-DM-9u5">
+                                <rect key="frame" x="20" y="82" width="374" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="bj9-s5-urw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lati" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IkQ-9B-AOu">
+                                <rect key="frame" x="20" y="212" width="374" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="long" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ngi-zj-WY9">
+                                <rect key="frame" x="20" y="274.5" width="374" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1u-YM-L2K">
+                                <rect key="frame" x="20" y="360" width="374" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Q6C-p6-mIe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateLocation:" destination="xfx-hM-zZs" eventType="touchUpInside" id="bUg-G2-GTR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="abi-fh-CKT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ngi-zj-WY9" firstAttribute="trailing" secondItem="IkQ-9B-AOu" secondAttribute="trailing" id="Er7-wZ-eiS"/>
+                            <constraint firstItem="ngi-zj-WY9" firstAttribute="top" secondItem="IkQ-9B-AOu" secondAttribute="bottom" constant="24" id="GVn-Jo-IqW"/>
+                            <constraint firstItem="IkQ-9B-AOu" firstAttribute="trailing" secondItem="R6i-DM-9u5" secondAttribute="trailing" id="IZq-f2-t5q"/>
+                            <constraint firstItem="U1u-YM-L2K" firstAttribute="leading" secondItem="ngi-zj-WY9" secondAttribute="leading" id="OSM-Kg-JSt"/>
+                            <constraint firstItem="U1u-YM-L2K" firstAttribute="trailing" secondItem="ngi-zj-WY9" secondAttribute="trailing" id="TCb-K9-vOl"/>
+                            <constraint firstItem="R6i-DM-9u5" firstAttribute="leading" secondItem="abi-fh-CKT" secondAttribute="leading" constant="20" id="WH4-PY-JJN"/>
+                            <constraint firstItem="U1u-YM-L2K" firstAttribute="top" secondItem="ngi-zj-WY9" secondAttribute="bottom" constant="47" id="a1l-V9-sZw"/>
+                            <constraint firstItem="IkQ-9B-AOu" firstAttribute="leading" secondItem="R6i-DM-9u5" secondAttribute="leading" id="aI1-G6-tp7"/>
+                            <constraint firstItem="abi-fh-CKT" firstAttribute="trailing" secondItem="R6i-DM-9u5" secondAttribute="trailing" constant="20" id="dVM-wL-GnY"/>
+                            <constraint firstItem="ngi-zj-WY9" firstAttribute="leading" secondItem="IkQ-9B-AOu" secondAttribute="leading" id="gDR-lQ-Qwv"/>
+                            <constraint firstItem="IkQ-9B-AOu" firstAttribute="top" secondItem="R6i-DM-9u5" secondAttribute="bottom" constant="48" id="i5z-Ke-Oj5"/>
+                            <constraint firstItem="R6i-DM-9u5" firstAttribute="top" secondItem="abi-fh-CKT" secondAttribute="top" constant="38" id="toA-na-c76"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="latiTextFeild" destination="IkQ-9B-AOu" id="0dk-rC-ebm"/>
+                        <outlet property="longTextField" destination="ngi-zj-WY9" id="rT1-sS-vEK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALY-Kh-6Zh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592.753623188406" y="-555.13392857142856"/>
+        </scene>
         <!--Compersion Two Routes View Controller-->
         <scene sceneID="x6P-Jn-k2e">
             <objects>
