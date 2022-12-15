@@ -8,6 +8,7 @@
 import UIKit
 import ArcGIS
 import FirebaseDatabase
+import CoreLocation
 
 class CompersionTwoRoutesViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class CompersionTwoRoutesViewController: UIViewController {
     
     var esri: Esri!
     var firebase = Firebase()
+    var locationManager: CLLocationManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,16 +74,28 @@ class CompersionTwoRoutesViewController: UIViewController {
             
             self.esri.getDefaultParameters()
             self.mapView.setViewpointCenter(self.esri.points[1], scale: 1750)
+            self.ConfigureLocation()
         }
     }
     
-    /*func AddStartPoint() {
-        esri.AddPointOnMap(point: AGSPoint(x: 32.288795, y: 31.263519, spatialReference: .wgs84()), attribute: ["title": "Supermarket","Address": "portsaid,forseasons"] as! [String: AnyObject])
+    // MARK:- TODO:- This Method For Configure Location.
+    func ConfigureLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        alwaysAuthorization()
     }
     
-    func AddEndPoint() {
-        esri.AddPointOnMap(point: AGSPoint(x: 32.294476, y: 31.260259, spatialReference: .wgs84()),attribute: ["title": "Car","Address": "portsaid,lord"] as! [String: AnyObject])
-    }*/
+    func alwaysAuthorization() {
+        if CLLocationManager.locationServicesEnabled() && CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
 }
 
 extension CompersionTwoRoutesViewController: AGSGeoViewTouchDelegate {

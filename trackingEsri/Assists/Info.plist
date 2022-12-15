@@ -2,8 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We want to your location to track you in the correct track</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We want to your location to track you in the correct track</string>
+	<key>NSLocationDefaultAccuracyReduced</key>
+	<string>We want to your location to track you in the correct track</string>
+	<key>Privacy - Location Usage Describtion</key>
+	<string>We want to your location to track you in the correct track</string>
+	<key>Privacy - Location When In Use Uasage Describtion</key>
+	<string>We want to your location to track you in the correct track</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -23,5 +31,10 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+	</array>
 </dict>
 </plist>
