@@ -66,6 +66,7 @@ class CompersionTwoRoutesViewController: UIViewController {
             
             if (self.esri.points.count == 1) {
                 self.esri.AddPointOnMap(point: AGSPoint(x: responseObj.location.long, y: responseObj.location.lati, spatialReference: .wgs84()), attribute: ["title": responseObj.name] as! [String: AnyObject])
+                self.mapView.setViewpointCenter(self.esri.points[1], scale: 3550)
             }
             else {
                 print("Update point")
@@ -73,7 +74,6 @@ class CompersionTwoRoutesViewController: UIViewController {
             }
             
             self.esri.getDefaultParameters()
-            self.mapView.setViewpointCenter(self.esri.points[1], scale: 3550)
             self.ConfigureLocation()
         }
     }

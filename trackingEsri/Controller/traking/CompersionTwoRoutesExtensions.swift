@@ -23,13 +23,6 @@ extension CompersionTwoRoutesViewController: CLLocationManagerDelegate {
                     let value = ["lati": l.coordinate.latitude, "long": l.coordinate.longitude] as! [String: Any]
                     await self.updateLocationInFireBase(value: value)
                 }
-                
-                /*Task.detached {
-                    // update UI with the new location
-                    let l = locationModel(lati: l.coordinate.latitude, long: l.coordinate.longitude)
-                    await self.esri.UpdatePoint(pointNumber: "two", location: l)
-                }*/
-                
             }
         }
         
