@@ -14,9 +14,19 @@ class CompersionTwoRoutesViewController: UIViewController {
     
     @IBOutlet weak var mapView: AGSMapView!
     
+    @IBOutlet weak var endButtonView:UIView!
+    @IBOutlet weak var rateView:UIView!
+    @IBOutlet weak var star1:UIImageView!
+    @IBOutlet weak var star2:UIImageView!
+    @IBOutlet weak var star3:UIImageView!
+    @IBOutlet weak var star4:UIImageView!
+    @IBOutlet weak var star5:UIImageView!
+    
     var esri: Esri!
     var firebase = Firebase()
     var locationManager: CLLocationManager!
+    var targetLocation: AGSPoint!
+    var historypoints = Array<locationModel>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +40,7 @@ class CompersionTwoRoutesViewController: UIViewController {
     }
     
     func LoadPointsFromDatabase() {
-        firebase.SetRefernce(ref: Database.database().reference().child("points").child("target"))
+        firebase.SetRefernce(ref: Database.database().reference().child("points")) // .child("target")
         
         firebase.observerDataWithoutListner { [weak self] snapshot in
             
@@ -40,18 +50,27 @@ class CompersionTwoRoutesViewController: UIViewController {
             
             guard let value = snapshot.value else {return}
             
-            guard let jsonData = try? JSONSerialization.data(withJSONObject: value, options: []) else {return}
             
-            guard let responseObj = try? JSONDecoder().decode(responseModel.self, from: jsonData) else {return}
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: value, options: []) else {
+                print("Error in JSON Serialization")
+                return}
+
+            guard let responseObj = try? JSONDecoder().decode([responseModel].self, from: jsonData) else {
+                print("Error in Decode")
+                return}
             
-            self.esri.AddPointOnMap(point: AGSPoint(x: responseObj.location.long, y: responseObj.location.lati, spatialReference: .wgs84()), attribute: ["title": responseObj.name] as! [String: AnyObject])
+            let point = AGSPoint(x: responseObj[0].target.location.long, y: responseObj[0].target.location.lati, spatialReference: .wgs84())
+            
+            self.esri.AddPointOnMap(point: point , attribute: ["title": responseObj[0].target.name] as! [String: AnyObject])
+            
+            self.targetLocation = point
             
             self.LoadCarsFromDataBase()
         }
     }
     
     func LoadCarsFromDataBase() {
-        firebase.SetRefernce(ref: Database.database().reference().child("points").child("vehicals"))
+        firebase.SetRefernce(ref: Database.database().reference().child("points"))
         
         firebase.observeDataWithListner { [weak self] snapshot in
             guard let self = self else {return}
@@ -62,15 +81,15 @@ class CompersionTwoRoutesViewController: UIViewController {
             
             guard let jsonData    = try? JSONSerialization.data(withJSONObject: value, options: []) else {return}
             
-            guard let responseObj = try? JSONDecoder().decode(responseModel.self, from: jsonData) else {return}
+            guard let responseObj = try? JSONDecoder().decode([responseModel].self, from: jsonData) else {return}
             
             if (self.esri.points.count == 1) {
-                self.esri.AddPointOnMap(point: AGSPoint(x: responseObj.location.long, y: responseObj.location.lati, spatialReference: .wgs84()), attribute: ["title": responseObj.name] as! [String: AnyObject])
+                self.esri.AddPointOnMap(point: AGSPoint(x: responseObj[0].vehicals.location.long, y: responseObj[0].vehicals.location.lati, spatialReference: .wgs84()), attribute: ["title": responseObj[0].vehicals.name] as! [String: AnyObject])
                 self.mapView.setViewpointCenter(self.esri.points[1], scale: 3550)
             }
             else {
                 print("Update point")
-                self.esri.UpdatePoint(pointNumber: "one", location: responseObj.location)
+                self.esri.UpdatePoint(pointNumber: "one", location: responseObj[0].vehicals.location)
             }
             
             self.esri.getDefaultParameters()

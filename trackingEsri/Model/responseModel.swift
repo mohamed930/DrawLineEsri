@@ -8,6 +8,12 @@
 import Foundation
 
 struct responseModel: Codable {
+    var bestRoute: [locationModel]
+    var target: pointDataModel
+    var vehicals: pointDataModel
+}
+
+struct pointDataModel: Codable {
     var name: String
     var location: locationModel
 }
