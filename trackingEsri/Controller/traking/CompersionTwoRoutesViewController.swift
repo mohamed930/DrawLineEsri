@@ -22,14 +22,22 @@ class CompersionTwoRoutesViewController: UIViewController {
     @IBOutlet weak var star4:UIImageView!
     @IBOutlet weak var star5:UIImageView!
     
+    @IBOutlet weak var testView:UIView!
+    @IBOutlet weak var testDistanceLabel:UILabel!
+    
     var esri: Esri!
     var firebase = Firebase()
     var locationManager: CLLocationManager!
     var targetLocation: AGSPoint!
     var historypoints = Array<locationModel>()
+    var bestRoute = Array<locationModel>()
+    var t: Task<(), Never>!
+    var arrOfImgs = Array<UIImageView>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        arrOfImgs = [star1,star2,star3,star4,star5]
 
         esri = Esri(mapView: mapView)
         
@@ -64,6 +72,7 @@ class CompersionTwoRoutesViewController: UIViewController {
             self.esri.AddPointOnMap(point: point , attribute: ["title": responseObj[0].target.name] as! [String: AnyObject])
             
             self.targetLocation = point
+            self.bestRoute = responseObj[0].bestRoute
             
             self.LoadCarsFromDataBase()
         }

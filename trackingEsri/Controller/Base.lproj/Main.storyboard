@@ -129,6 +129,24 @@
                                     <constraint firstAttribute="height" constant="120" id="yrf-Pb-8G6"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WT-8F-AnZ">
+                                <rect key="frame" x="6" y="653" width="364" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance: 0.0" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="qD4-75-ZdV">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="70"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qD4-75-ZdV" secondAttribute="trailing" id="UI4-yS-Glf"/>
+                                    <constraint firstItem="qD4-75-ZdV" firstAttribute="leading" secondItem="2WT-8F-AnZ" secondAttribute="leading" id="XWG-hY-9gM"/>
+                                    <constraint firstAttribute="height" constant="70" id="fTF-xY-bGu"/>
+                                    <constraint firstAttribute="bottom" secondItem="qD4-75-ZdV" secondAttribute="bottom" id="teV-8A-6Ri"/>
+                                    <constraint firstItem="qD4-75-ZdV" firstAttribute="top" secondItem="2WT-8F-AnZ" secondAttribute="top" id="wYF-wi-wk7"/>
+                                </constraints>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7s9-fq-GRP">
                                 <rect key="frame" x="10" y="673" width="362" height="70"/>
                                 <subviews>
@@ -157,6 +175,9 @@
                             <constraint firstItem="eao-XA-sxp" firstAttribute="trailing" secondItem="7s9-fq-GRP" secondAttribute="trailing" constant="3" id="3OV-2w-ElT"/>
                             <constraint firstItem="eao-XA-sxp" firstAttribute="bottom" secondItem="KP9-wt-MlV" secondAttribute="bottom" constant="35" id="6S2-UA-hcS"/>
                             <constraint firstItem="KP9-wt-MlV" firstAttribute="leading" secondItem="eao-XA-sxp" secondAttribute="leading" constant="8" id="8bL-jQ-Ftx"/>
+                            <constraint firstItem="eao-XA-sxp" firstAttribute="bottom" secondItem="2WT-8F-AnZ" secondAttribute="bottom" constant="55" id="J4l-hr-aTo"/>
+                            <constraint firstItem="2WT-8F-AnZ" firstAttribute="leading" secondItem="eao-XA-sxp" secondAttribute="leading" constant="6" id="OHL-hq-MIw"/>
+                            <constraint firstItem="eao-XA-sxp" firstAttribute="trailing" secondItem="2WT-8F-AnZ" secondAttribute="trailing" constant="5" id="QXu-P8-og5"/>
                             <constraint firstItem="bBd-sC-Qik" firstAttribute="top" secondItem="ci5-Qo-JaE" secondAttribute="top" id="TGU-cS-oBz"/>
                             <constraint firstAttribute="bottom" secondItem="bBd-sC-Qik" secondAttribute="bottom" id="Y4t-Yl-Yrv"/>
                             <constraint firstItem="bBd-sC-Qik" firstAttribute="leading" secondItem="eao-XA-sxp" secondAttribute="leading" id="YWj-lS-6jg"/>
@@ -174,6 +195,8 @@
                         <outlet property="star3" destination="U9f-V8-pyW" id="5SF-vS-dG6"/>
                         <outlet property="star4" destination="lcn-rg-963" id="8mH-Cb-o0r"/>
                         <outlet property="star5" destination="6ur-s3-l34" id="Sew-3n-9ly"/>
+                        <outlet property="testDistanceLabel" destination="qD4-75-ZdV" id="27Z-fe-cC7"/>
+                        <outlet property="testView" destination="2WT-8F-AnZ" id="Jxm-qe-5EO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42X-jc-rO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
