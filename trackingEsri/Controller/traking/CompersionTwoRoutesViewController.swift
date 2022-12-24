@@ -24,6 +24,7 @@ class CompersionTwoRoutesViewController: UIViewController {
     
     @IBOutlet weak var testView:UIView!
     @IBOutlet weak var testDistanceLabel:UILabel!
+    @IBOutlet weak var rateTripLabel: UILabel!
     
     var esri: Esri!
     var firebase = Firebase()
@@ -31,8 +32,8 @@ class CompersionTwoRoutesViewController: UIViewController {
     var targetLocation: AGSPoint!
     var historypoints = Array<locationModel>()
     var bestRoute = Array<locationModel>()
-    var t: Task<(), Never>!
     var arrOfImgs = Array<UIImageView>()
+    var flage = false
 
     override func viewDidLoad() {
         super.viewDidLoad()

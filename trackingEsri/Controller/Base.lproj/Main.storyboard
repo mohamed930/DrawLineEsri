@@ -189,6 +189,7 @@
                     <connections>
                         <outlet property="endButtonView" destination="7s9-fq-GRP" id="a7d-X3-ViE"/>
                         <outlet property="mapView" destination="bBd-sC-Qik" id="qWo-we-QOz"/>
+                        <outlet property="rateTripLabel" destination="66x-P6-q79" id="9Xq-BE-ScI"/>
                         <outlet property="rateView" destination="KP9-wt-MlV" id="Ark-eB-gqh"/>
                         <outlet property="star1" destination="7Bj-wn-2o1" id="GP4-Dt-sG3"/>
                         <outlet property="star2" destination="icf-dL-po8" id="yri-kn-sDH"/>

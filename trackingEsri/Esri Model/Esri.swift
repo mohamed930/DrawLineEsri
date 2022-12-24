@@ -161,4 +161,16 @@ class Esri {
         }
 
     }
+    
+    func AddLineManually(points: [AGSPoint],color: UIColor) {
+        let polyline = AGSPolyline(
+                    points: points
+                )
+        
+        let polylineSymbol = AGSSimpleLineSymbol(style: .solid, color: color, width: 3.0)
+        
+        let polylineGraphic = AGSGraphic(geometry: polyline, symbol: polylineSymbol)
+        
+        graphicsOverlay.graphics.add(polylineGraphic)
+    }
 }

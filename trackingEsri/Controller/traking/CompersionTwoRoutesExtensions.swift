@@ -8,81 +8,113 @@
 import UIKit
 import CoreLocation
 import FirebaseDatabase
+import ArcGIS
 
 extension CompersionTwoRoutesViewController: CLLocationManagerDelegate {
     
     //Write the didUpdateLocations method here:
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        
+        var distanceInMeters = 0.0
+        
+        DispatchQueue.background(delay: 5.0, background: { [weak self] in
+            // do something in background
+            guard let self = self else { return }
             let l = locations[locations.count - 1]
             if l.horizontalAccuracy > 0 {
                 
-                self.t = Task.detached {
-                    print("Long = \(l.coordinate.longitude) latitude = \(l.coordinate.latitude)")
-                    await self.SaveTheStepHistory(lati: l.coordinate.longitude, long: l.coordinate.latitude)
-                    
-                    // update UI with the new location in firebase.
-                    let value = ["lati": l.coordinate.latitude, "long": l.coordinate.longitude] as! [String: Any]
-                    await self.updateLocationInFireBase(value: value)
-                    
-                    let currentpoint = CLLocation(latitude: l.coordinate.latitude, longitude: l.coordinate.longitude)
-                    let target =  await CLLocation(latitude: self.targetLocation.y, longitude: self.targetLocation.x)
-                    
-                    let distanceInMeters = currentpoint.distance(from: target)
-                    
-                    if(distanceInMeters <= 20 || distanceInMeters <= 5) {
-                        // if destnace less then 20 metre show the End button in UI.
-                        DispatchQueue.main.async {
-                            self.loadUI()
-                        }
-                        
-                    }
-                    else {
-                        await self.printDistance(distanceMetere: distanceInMeters)
-                    }
-                    
-                }
+                print("Long = \(l.coordinate.longitude) latitude = \(l.coordinate.latitude)")
+                self.SaveTheStepHistory(lati: l.coordinate.latitude, long: l.coordinate.longitude)
+                
+                let value = ["lati": l.coordinate.latitude, "long": l.coordinate.longitude] as! [String: Any]
+                self.updateLocationInFireBase(value: value)
+                
+                let currentpoint = CLLocation(latitude: l.coordinate.latitude, longitude: l.coordinate.longitude)
+                let target =       CLLocation(latitude: self.targetLocation.y, longitude: self.targetLocation.x)
+                
+                
+                distanceInMeters = currentpoint.distance(from: target)
+            }
+        }, completion: { [weak self] in
+            // when background job finishes
+            guard let self = self else { return }
+            if (distanceInMeters <= 20 || distanceInMeters <= 5) {
+                // if destnace less then 20 metre show the End button in UI.
+                self.loadUI()
+                
+            }
+            else {
+                 self.printDistance(distanceMetere: distanceInMeters)
+            }
+            
+        })
+        
+    }
+    
+    func loadUI() {
+        if !flage {
+            endButtonView.isHidden = false
+            rateView.isHidden = true
+            testView.isHidden = true
+        }
+        else {
+            if locationManager != nil {
+                locationManager = nil
+                // locationManager.stopUpdatingLocation()
+                endButtonView.isHidden = true
             }
         }
         
     }
     
+    @IBAction func EndTripButtonAction (_ sender: Any) {
+        // first stop the task
+        flage = true
+        
+        
+        //calculateRateOfTrip()
+        var points = Array<AGSPoint>()
+        for i in historypoints {
+            points.append(AGSPoint(x: i.long, y: i.lati, spatialReference: .wgs84()))
+        }
+        esri.AddLineManually(points: points,color: .blue)
+        
+        var best = Array<AGSPoint>()
+        for i in bestRoute {
+            best.append(AGSPoint(x: i.long, y: i.lati, spatialReference: .wgs84()))
+        }
+        esri.AddLineManually(points: best, color: .green)
+        
+        esri.routeGraphicsOverlay.graphics.removeAllObjects()
+        
+    }
+    
     func printDistance(distanceMetere: Double) {
-         self.testDistanceLabel.text = "Distance: " + String(distanceMetere)
+        testView.isHidden = false
+        endButtonView.isHidden = true
+        testDistanceLabel.text = "Distance: " + String(distanceMetere)
     }
     
     func SaveTheStepHistory(lati: Double, long: Double) {
         historypoints.append(locationModel(lati: lati, long: long))
     }
     
-    func loadUI() {
-        endButtonView.isHidden = false
-        rateView.isHidden = true
-        testView.isHidden = true
-    }
-    
-    @IBAction func EndTripButtonAction (_ sender: Any) {
-        // first stop the task
-        t.cancel()
-        
-        // second stop location tracking
-        self.locationManager.stopUpdatingLocation()
-        self.locationManager.delegate = nil
-        
-        // third Load the Rate of trip
-        calculateRateOfTrip()
-    }
-    
     func calculateRateOfTrip() {
-        endButtonView.isHidden = true
         rateView.isHidden = false
+        endButtonView.isHidden = true
         testView.isHidden = true
+        
+        for i in bestRoute {
+            print("locationModel(lati: \(i.lati),long: \(i.long)),")
+        }
         
         let interaction = historypoints.filter { element in
             bestRoute.contains(where: {$0.lati == element.lati && $0.long == element.long})
         }
         
         let precentage = Double(interaction.count/bestRoute.count) * 100
+        
+        rateTripLabel.text = "تقيم الرحله : " + String(precentage) + "%"
         
         switch precentage {
         case 0:
@@ -158,7 +190,6 @@ extension CompersionTwoRoutesViewController: CLLocationManagerDelegate {
         default:
             print("None of the obove")
         }
-        
         
     }
     
