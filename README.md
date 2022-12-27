@@ -11,4 +11,4 @@ Tracking In Esri Map SDK
 ## ![Simulator Screen Recording - iPhone 11 - 2022-12-08 at 21 10 02](https://user-images.githubusercontent.com/47215527/206548678-3209f31a-f8bf-4a80-9ffb-689bcfc81146.gif)
 
 ### Tracking car and Get the rate for your trip
-## ![Tracking with Esri] (./Tracking with Esri.gif)
+## ![gif] (./Tracking with Esri.gif)
