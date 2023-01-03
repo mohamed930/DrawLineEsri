@@ -9,5 +9,8 @@ target 'trackingEsri' do
   
   pod 'ArcGIS-Runtime-SDK-iOS'
   pod 'FirebaseDatabase'
+  pod 'IQKeyboardManagerSwift'
+  pod "BCryptSwift"
+  pod "Colorful"
 
 end

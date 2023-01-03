@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Car Details View Controller-->
+        <scene sceneID="oAf-fQ-OHt">
+            <objects>
+                <viewController storyboardIdentifier="CarDetailsViewController" id="56m-xe-hRl" customClass="CarDetailsViewController" customModule="trackingEsri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fX0-Rb-MYK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجل سيارتك" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niE-LP-YMj">
+                                <rect key="frame" x="103" y="60" width="169" height="38.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم السائق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fio-tC-6Bj">
+                                <rect key="frame" x="16" y="131.33333333333334" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8am-Pu-JH6">
+                                <rect key="frame" x="16" y="160.33333333333334" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الرخصه" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sW-KZ-xmb">
+                                <rect key="frame" x="16" y="202.33333333333334" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hl5-aP-ukM">
+                                <rect key="frame" x="16" y="231.33333333333334" width="343" height="34.000000000000028"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع السياره" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJd-98-1JA">
+                                <rect key="frame" x="16" y="273.33333333333331" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLd-oH-Nk6">
+                                <rect key="frame" x="16" y="302.33333333333331" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لون السياره" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aT-Kf-jhl">
+                                <rect key="frame" x="16" y="345.33333333333331" width="343" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="P9X-xQ-d4X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR9-0r-jzM">
+                                <rect key="frame" x="21" y="629.33333333333337" width="337.66666666666669" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="سجل السياره"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3Xg-88-abY"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7S-aV-33f" customClass="ColorPicker" customModule="Colorful">
+                                <rect key="frame" x="92.666666666666686" y="379.33333333333331" width="190" height="189.99999999999994"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="5i4-C2-sll"/>
+                                    <constraint firstAttribute="width" secondItem="l7S-aV-33f" secondAttribute="height" multiplier="1:1" id="gDR-cJ-RbQ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="color name label" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="CEI-hX-C3k">
+                                <rect key="frame" x="92.666666666666686" y="577.33333333333337" width="190" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ko0-ao-ohS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ko0-ao-ohS" firstAttribute="trailing" secondItem="fio-tC-6Bj" secondAttribute="trailing" constant="16" id="2cl-2M-4dq"/>
+                            <constraint firstItem="8am-Pu-JH6" firstAttribute="top" secondItem="fio-tC-6Bj" secondAttribute="bottom" constant="8" symbolic="YES" id="3uF-ou-dT9"/>
+                            <constraint firstItem="l7S-aV-33f" firstAttribute="top" secondItem="0aT-Kf-jhl" secondAttribute="bottom" constant="8" symbolic="YES" id="4Dh-GI-wlW"/>
+                            <constraint firstItem="0aT-Kf-jhl" firstAttribute="top" secondItem="WLd-oH-Nk6" secondAttribute="bottom" constant="9" id="5Zc-9H-oUD"/>
+                            <constraint firstItem="hl5-aP-ukM" firstAttribute="leading" secondItem="6sW-KZ-xmb" secondAttribute="leading" id="68p-a0-o0a"/>
+                            <constraint firstItem="WLd-oH-Nk6" firstAttribute="leading" secondItem="pJd-98-1JA" secondAttribute="leading" id="6rT-tR-iwx"/>
+                            <constraint firstItem="WLd-oH-Nk6" firstAttribute="top" secondItem="pJd-98-1JA" secondAttribute="bottom" constant="8" symbolic="YES" id="8ia-qU-Z9I"/>
+                            <constraint firstItem="CEI-hX-C3k" firstAttribute="leading" secondItem="l7S-aV-33f" secondAttribute="leading" id="9iB-Vh-FCr"/>
+                            <constraint firstItem="niE-LP-YMj" firstAttribute="top" secondItem="ko0-ao-ohS" secondAttribute="top" constant="16" id="Bh4-hP-xcf"/>
+                            <constraint firstItem="0aT-Kf-jhl" firstAttribute="trailing" secondItem="WLd-oH-Nk6" secondAttribute="trailing" id="EIB-yd-ANF"/>
+                            <constraint firstItem="fio-tC-6Bj" firstAttribute="leading" secondItem="ko0-ao-ohS" secondAttribute="leading" constant="16" id="Ekz-Wr-ymy"/>
+                            <constraint firstItem="fio-tC-6Bj" firstAttribute="top" secondItem="niE-LP-YMj" secondAttribute="bottom" constant="32.666666666666657" id="LbS-uD-yPX"/>
+                            <constraint firstItem="hl5-aP-ukM" firstAttribute="top" secondItem="6sW-KZ-xmb" secondAttribute="bottom" constant="8" symbolic="YES" id="Lns-J4-xDa"/>
+                            <constraint firstItem="hl5-aP-ukM" firstAttribute="trailing" secondItem="6sW-KZ-xmb" secondAttribute="trailing" id="N0m-WP-h1q"/>
+                            <constraint firstItem="pJd-98-1JA" firstAttribute="top" secondItem="hl5-aP-ukM" secondAttribute="bottom" constant="8" symbolic="YES" id="NxZ-pd-85Z"/>
+                            <constraint firstItem="ko0-ao-ohS" firstAttribute="trailing" secondItem="GR9-0r-jzM" secondAttribute="trailing" constant="16.333333333333258" id="Qf2-Di-PXF"/>
+                            <constraint firstItem="GR9-0r-jzM" firstAttribute="leading" secondItem="ko0-ao-ohS" secondAttribute="leading" constant="21" id="R5i-Qt-TnE"/>
+                            <constraint firstItem="WLd-oH-Nk6" firstAttribute="trailing" secondItem="pJd-98-1JA" secondAttribute="trailing" id="RdY-U4-lXB"/>
+                            <constraint firstItem="pJd-98-1JA" firstAttribute="leading" secondItem="hl5-aP-ukM" secondAttribute="leading" id="TnQ-TH-T3x"/>
+                            <constraint firstItem="l7S-aV-33f" firstAttribute="centerX" secondItem="ko0-ao-ohS" secondAttribute="centerX" id="ZtV-dw-stS"/>
+                            <constraint firstItem="0aT-Kf-jhl" firstAttribute="leading" secondItem="WLd-oH-Nk6" secondAttribute="leading" id="aZt-18-rAC"/>
+                            <constraint firstItem="GR9-0r-jzM" firstAttribute="top" secondItem="CEI-hX-C3k" secondAttribute="bottom" constant="31" id="bNu-MD-fel"/>
+                            <constraint firstItem="pJd-98-1JA" firstAttribute="trailing" secondItem="hl5-aP-ukM" secondAttribute="trailing" id="evz-BS-lpU"/>
+                            <constraint firstItem="6sW-KZ-xmb" firstAttribute="top" secondItem="8am-Pu-JH6" secondAttribute="bottom" constant="8" symbolic="YES" id="fNb-cr-PEQ"/>
+                            <constraint firstItem="8am-Pu-JH6" firstAttribute="leading" secondItem="fio-tC-6Bj" secondAttribute="leading" id="i9M-th-6h6"/>
+                            <constraint firstItem="niE-LP-YMj" firstAttribute="centerX" secondItem="ko0-ao-ohS" secondAttribute="centerX" id="lFw-KH-6G6"/>
+                            <constraint firstItem="CEI-hX-C3k" firstAttribute="trailing" secondItem="l7S-aV-33f" secondAttribute="trailing" id="nSx-FJ-4Ll"/>
+                            <constraint firstItem="8am-Pu-JH6" firstAttribute="trailing" secondItem="fio-tC-6Bj" secondAttribute="trailing" id="nU8-Jk-6gy"/>
+                            <constraint firstItem="6sW-KZ-xmb" firstAttribute="trailing" secondItem="8am-Pu-JH6" secondAttribute="trailing" id="pHr-qD-qC1"/>
+                            <constraint firstItem="CEI-hX-C3k" firstAttribute="top" secondItem="l7S-aV-33f" secondAttribute="bottom" constant="8" symbolic="YES" id="sWk-rc-x6b"/>
+                            <constraint firstItem="6sW-KZ-xmb" firstAttribute="leading" secondItem="8am-Pu-JH6" secondAttribute="leading" id="t87-fg-u00"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="carDriverLabel" destination="8am-Pu-JH6" id="ga8-yn-Cee"/>
+                        <outlet property="carlicenceNumber" destination="hl5-aP-ukM" id="2kg-ja-5EU"/>
+                        <outlet property="cartype" destination="WLd-oH-Nk6" id="qsN-Zq-PUj"/>
+                        <outlet property="colorName" destination="CEI-hX-C3k" id="qIx-JT-qJs"/>
+                        <outlet property="colorPicker" destination="l7S-aV-33f" id="4XZ-02-h25"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0L-MR-5Oo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-576.35467980295573"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="loginViewController" customModule="trackingEsri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل الدخول" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cm4-Wo-WXp">
+                                <rect key="frame" x="16" y="74" width="343" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="yxQ-oM-fra"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الهاتف" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fm-sY-Toz">
+                                <rect key="frame" x="16" y="173" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="510-wo-3CY">
+                                <rect key="frame" x="16" y="202" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كلمة المرور" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0h-C2-tvg">
+                                <rect key="frame" x="16" y="244" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7uf-VV-Itw">
+                                <rect key="frame" x="16" y="273" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0d-zF-qFc">
+                                <rect key="frame" x="18.666666666666657" y="359" width="337.66666666666674" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="تسجيل الدخول"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ihn-hv-mO6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bi-Rh-JbK">
+                                <rect key="frame" x="18.666666666666657" y="723" width="337.66666666666674" height="39"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="ليس لديك حساب سجل حساب الآن؟"/>
+                                <connections>
+                                    <action selector="SignupButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cJA-ID-yFh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cm4-Wo-WXp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="1hV-Qc-8yJ"/>
+                            <constraint firstItem="6Fm-sY-Toz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="5Pb-QT-xd0"/>
+                            <constraint firstItem="510-wo-3CY" firstAttribute="leading" secondItem="6Fm-sY-Toz" secondAttribute="leading" id="Fje-Vk-jpp"/>
+                            <constraint firstItem="L0d-zF-qFc" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Gly-tR-gAU"/>
+                            <constraint firstItem="510-wo-3CY" firstAttribute="top" secondItem="6Fm-sY-Toz" secondAttribute="bottom" constant="8" symbolic="YES" id="H8o-8D-yaP"/>
+                            <constraint firstItem="9Bi-Rh-JbK" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="LZ6-xs-hGv"/>
+                            <constraint firstItem="7uf-VV-Itw" firstAttribute="top" secondItem="Q0h-C2-tvg" secondAttribute="bottom" constant="8" symbolic="YES" id="NMc-Oy-ngN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="9Bi-Rh-JbK" secondAttribute="bottom" constant="16" id="OVe-nT-hj1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Cm4-Wo-WXp" secondAttribute="trailing" constant="16" id="OZC-Zi-r37"/>
+                            <constraint firstItem="9Bi-Rh-JbK" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.9:1" id="PRn-3V-dee"/>
+                            <constraint firstItem="6Fm-sY-Toz" firstAttribute="top" secondItem="Cm4-Wo-WXp" secondAttribute="bottom" constant="28" id="QGC-tK-okV"/>
+                            <constraint firstItem="Q0h-C2-tvg" firstAttribute="trailing" secondItem="510-wo-3CY" secondAttribute="trailing" id="VzB-s2-fHy"/>
+                            <constraint firstItem="L0d-zF-qFc" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.9:1" id="XlE-iY-Rf7"/>
+                            <constraint firstItem="Q0h-C2-tvg" firstAttribute="top" secondItem="510-wo-3CY" secondAttribute="bottom" constant="8" symbolic="YES" id="YZc-ZS-q6d"/>
+                            <constraint firstItem="Cm4-Wo-WXp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="dLX-S4-7bI"/>
+                            <constraint firstItem="L0d-zF-qFc" firstAttribute="top" secondItem="7uf-VV-Itw" secondAttribute="bottom" constant="52" id="e9O-mR-H1b"/>
+                            <constraint firstItem="Q0h-C2-tvg" firstAttribute="leading" secondItem="510-wo-3CY" secondAttribute="leading" id="gYL-Hi-sx4"/>
+                            <constraint firstItem="7uf-VV-Itw" firstAttribute="trailing" secondItem="Q0h-C2-tvg" secondAttribute="trailing" id="iJ0-rM-3pD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6Fm-sY-Toz" secondAttribute="trailing" constant="16" id="ije-PL-o9w"/>
+                            <constraint firstItem="510-wo-3CY" firstAttribute="trailing" secondItem="6Fm-sY-Toz" secondAttribute="trailing" id="oHq-cR-0nL"/>
+                            <constraint firstItem="7uf-VV-Itw" firstAttribute="leading" secondItem="Q0h-C2-tvg" secondAttribute="leading" id="s0l-L5-U8i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="L0d-zF-qFc" id="W9h-qu-ctC"/>
+                        <outlet property="passwordTextField" destination="7uf-VV-Itw" id="ppI-eU-wNc"/>
+                        <outlet property="singupButton" destination="9Bi-Rh-JbK" id="8tU-8v-KpE"/>
+                        <outlet property="telephoneTextField" destination="510-wo-3CY" id="ROB-NZ-dB6"/>
+                        <outlet property="titleLabel" destination="Cm4-Wo-WXp" id="oEb-VU-6tO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="96.798029556650249"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

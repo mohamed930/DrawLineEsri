@@ -8,6 +8,7 @@
 import UIKit
 import ArcGIS
 import FirebaseCore
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         AGSArcGISRuntimeEnvironment.apiKey = api_key
         FirebaseApp.configure()
+        
+        IQKeyboardManager.shared.enable = true
         return true
     }
 

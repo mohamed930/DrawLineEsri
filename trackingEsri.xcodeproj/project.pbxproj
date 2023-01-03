@@ -10,11 +10,14 @@
 		8B49EC11C06EFCB69AB4D402 /* Pods_trackingEsri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33339151202147B7BDF93831 /* Pods_trackingEsri.framework */; };
 		D31F786F2942603800E02FD5 /* GeoCoderMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */; };
 		D34BB7E5294B961F003927C0 /* CompersionTwoRoutesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34BB7E4294B961F003927C0 /* CompersionTwoRoutesExtensions.swift */; };
+		D35B68902964AEEA000F7238 /* MultiTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35B688F2964AEEA000F7238 /* MultiTracking.storyboard */; };
+		D35B68932964AF37000F7238 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B68922964AF37000F7238 /* loginViewController.swift */; };
 		D372AC00294B73ED00C31EBB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D372ABFF294B73ED00C31EBB /* GoogleService-Info.plist */; };
 		D372AC03294B756F00C31EBB /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372AC02294B756F00C31EBB /* Firebase.swift */; };
 		D372AC05294B78AF00C31EBB /* responseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372AC04294B78AF00C31EBB /* responseModel.swift */; };
 		D38FC6FB2957063700E62017 /* track.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D38FC6FA2957063700E62017 /* track.gpx */; };
 		D38FC6FD29570B8F00E62017 /* BackgroundThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38FC6FC29570B8F00E62017 /* BackgroundThread.swift */; };
+		D39EA9892964D360002282C6 /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EA9882964D360002282C6 /* CarDetailsViewController.swift */; };
 		D39F7C24294B5D5100C132CD /* CompersionTwoRoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F7C23294B5D5100C132CD /* CompersionTwoRoutesViewController.swift */; };
 		D39F7C27294B5E0D00C132CD /* Esri.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F7C26294B5E0D00C132CD /* Esri.swift */; };
 		D3CEA5302958CA2900D5F2BA /* NavigateRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEA52F2958CA2900D5F2BA /* NavigateRouteViewController.swift */; };
@@ -34,11 +37,14 @@
 		829DEB84850843C5C43C69C1 /* Pods-trackingEsri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trackingEsri.debug.xcconfig"; path = "Target Support Files/Pods-trackingEsri/Pods-trackingEsri.debug.xcconfig"; sourceTree = "<group>"; };
 		D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoderMapViewController.swift; sourceTree = "<group>"; };
 		D34BB7E4294B961F003927C0 /* CompersionTwoRoutesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompersionTwoRoutesExtensions.swift; sourceTree = "<group>"; };
+		D35B688F2964AEEA000F7238 /* MultiTracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MultiTracking.storyboard; sourceTree = "<group>"; };
+		D35B68922964AF37000F7238 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		D372ABFF294B73ED00C31EBB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D372AC02294B756F00C31EBB /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		D372AC04294B78AF00C31EBB /* responseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseModel.swift; sourceTree = "<group>"; };
 		D38FC6FA2957063700E62017 /* track.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = track.gpx; sourceTree = "<group>"; };
 		D38FC6FC29570B8F00E62017 /* BackgroundThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundThread.swift; sourceTree = "<group>"; };
+		D39EA9882964D360002282C6 /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
 		D39F7C23294B5D5100C132CD /* CompersionTwoRoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompersionTwoRoutesViewController.swift; sourceTree = "<group>"; };
 		D39F7C26294B5E0D00C132CD /* Esri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esri.swift; sourceTree = "<group>"; };
 		D3CEA52F2958CA2900D5F2BA /* NavigateRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateRouteViewController.swift; sourceTree = "<group>"; };
@@ -92,12 +98,38 @@
 			path = traking;
 			sourceTree = "<group>";
 		};
+		D35B688E2964AEC5000F7238 /* Multi tracking */ = {
+			isa = PBXGroup;
+			children = (
+				D35B68912964AF19000F7238 /* Controller */,
+				D39EA9872964C006002282C6 /* Views */,
+			);
+			path = "Multi tracking";
+			sourceTree = "<group>";
+		};
+		D35B68912964AF19000F7238 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D35B68922964AF37000F7238 /* loginViewController.swift */,
+				D39EA9882964D360002282C6 /* CarDetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D372AC01294B756F00C31EBB /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 				D372AC02294B756F00C31EBB /* Firebase.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		D39EA9872964C006002282C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D35B688F2964AEEA000F7238 /* MultiTracking.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D39F7C25294B5DFB00C132CD /* Esri Model */ = {
@@ -144,6 +176,7 @@
 				D372AC01294B756F00C31EBB /* Firebase */,
 				D3F1B3B929410B3100331AD5 /* Model */,
 				D3F1B3B6294107EE00331AD5 /* Controller */,
+				D35B688E2964AEC5000F7238 /* Multi tracking */,
 				D3F1B3B7294107F800331AD5 /* Assists */,
 			);
 			path = trackingEsri;
@@ -262,6 +295,7 @@
 				D3F1B3AE294107BB00331AD5 /* LaunchScreen.storyboard in Resources */,
 				D372AC00294B73ED00C31EBB /* GoogleService-Info.plist in Resources */,
 				D38FC6FB2957063700E62017 /* track.gpx in Resources */,
+				D35B68902964AEEA000F7238 /* MultiTracking.storyboard in Resources */,
 				D3F1B3AB294107BB00331AD5 /* Assets.xcassets in Resources */,
 				D3F1B3A9294107B900331AD5 /* Main.storyboard in Resources */,
 			);
@@ -316,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35B68932964AF37000F7238 /* loginViewController.swift in Sources */,
 				D39F7C27294B5E0D00C132CD /* Esri.swift in Sources */,
 				D3CEA5322958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift in Sources */,
 				D3F1B3A6294107B900331AD5 /* MapViewController.swift in Sources */,
@@ -326,6 +361,7 @@
 				D38FC6FD29570B8F00E62017 /* BackgroundThread.swift in Sources */,
 				D3CEA5302958CA2900D5F2BA /* NavigateRouteViewController.swift in Sources */,
 				D372AC05294B78AF00C31EBB /* responseModel.swift in Sources */,
+				D39EA9892964D360002282C6 /* CarDetailsViewController.swift in Sources */,
 				D3F1B3BB29410B4500331AD5 /* pointModel.swift in Sources */,
 				D3F1B3A4294107B900331AD5 /* SceneDelegate.swift in Sources */,
 				D34BB7E5294B961F003927C0 /* CompersionTwoRoutesExtensions.swift in Sources */,
@@ -481,9 +517,10 @@
 				INFOPLIST_FILE = trackingEsri/Assists/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to your location to track you in the correct track";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We want to your location to track you in the correct track";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to your location to track you in the correct track";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MultiTracking;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -514,9 +551,10 @@
 				INFOPLIST_FILE = trackingEsri/Assists/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to your location to track you in the correct track";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We want to your location to track you in the correct track";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to your location to track you in the correct track";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MultiTracking;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;

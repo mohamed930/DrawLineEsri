@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We want to your location to track you in the correct track</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We want to your location to track you in the correct track</string>
 	<key>NSLocationDefaultAccuracyReduced</key>
 	<string>We want to your location to track you in the correct track</string>
 	<key>Privacy - Location Usage Describtion</key>
@@ -26,7 +22,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
+					<string>MultiTracking</string>
 				</dict>
 			</array>
 		</dict>
