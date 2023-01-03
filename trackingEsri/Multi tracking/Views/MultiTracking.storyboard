@@ -65,15 +65,6 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR9-0r-jzM">
-                                <rect key="frame" x="21" y="629.33333333333337" width="337.66666666666669" height="39"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="سجل السياره"/>
-                                <connections>
-                                    <action selector="loginAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3Xg-88-abY"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7S-aV-33f" customClass="ColorPicker" customModule="Colorful">
                                 <rect key="frame" x="92.666666666666686" y="379.33333333333331" width="190" height="189.99999999999994"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -82,12 +73,19 @@
                                     <constraint firstAttribute="width" secondItem="l7S-aV-33f" secondAttribute="height" multiplier="1:1" id="gDR-cJ-RbQ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="color name label" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="CEI-hX-C3k">
-                                <rect key="frame" x="92.666666666666686" y="577.33333333333337" width="190" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR9-0r-jzM">
+                                <rect key="frame" x="21" y="609" width="337.66666666666669" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="1a5-Rm-6yt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="سجل السياره"/>
+                                <connections>
+                                    <action selector="SignupOperation" destination="56m-xe-hRl" eventType="touchUpInside" id="UBI-Zp-SUe"/>
+                                    <action selector="loginAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3Xg-88-abY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ko0-ao-ohS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -99,10 +97,10 @@
                             <constraint firstItem="hl5-aP-ukM" firstAttribute="leading" secondItem="6sW-KZ-xmb" secondAttribute="leading" id="68p-a0-o0a"/>
                             <constraint firstItem="WLd-oH-Nk6" firstAttribute="leading" secondItem="pJd-98-1JA" secondAttribute="leading" id="6rT-tR-iwx"/>
                             <constraint firstItem="WLd-oH-Nk6" firstAttribute="top" secondItem="pJd-98-1JA" secondAttribute="bottom" constant="8" symbolic="YES" id="8ia-qU-Z9I"/>
-                            <constraint firstItem="CEI-hX-C3k" firstAttribute="leading" secondItem="l7S-aV-33f" secondAttribute="leading" id="9iB-Vh-FCr"/>
                             <constraint firstItem="niE-LP-YMj" firstAttribute="top" secondItem="ko0-ao-ohS" secondAttribute="top" constant="16" id="Bh4-hP-xcf"/>
                             <constraint firstItem="0aT-Kf-jhl" firstAttribute="trailing" secondItem="WLd-oH-Nk6" secondAttribute="trailing" id="EIB-yd-ANF"/>
                             <constraint firstItem="fio-tC-6Bj" firstAttribute="leading" secondItem="ko0-ao-ohS" secondAttribute="leading" constant="16" id="Ekz-Wr-ymy"/>
+                            <constraint firstItem="GR9-0r-jzM" firstAttribute="top" secondItem="l7S-aV-33f" secondAttribute="bottom" constant="39.666666666666742" id="HeM-KU-vUr"/>
                             <constraint firstItem="fio-tC-6Bj" firstAttribute="top" secondItem="niE-LP-YMj" secondAttribute="bottom" constant="32.666666666666657" id="LbS-uD-yPX"/>
                             <constraint firstItem="hl5-aP-ukM" firstAttribute="top" secondItem="6sW-KZ-xmb" secondAttribute="bottom" constant="8" symbolic="YES" id="Lns-J4-xDa"/>
                             <constraint firstItem="hl5-aP-ukM" firstAttribute="trailing" secondItem="6sW-KZ-xmb" secondAttribute="trailing" id="N0m-WP-h1q"/>
@@ -113,15 +111,12 @@
                             <constraint firstItem="pJd-98-1JA" firstAttribute="leading" secondItem="hl5-aP-ukM" secondAttribute="leading" id="TnQ-TH-T3x"/>
                             <constraint firstItem="l7S-aV-33f" firstAttribute="centerX" secondItem="ko0-ao-ohS" secondAttribute="centerX" id="ZtV-dw-stS"/>
                             <constraint firstItem="0aT-Kf-jhl" firstAttribute="leading" secondItem="WLd-oH-Nk6" secondAttribute="leading" id="aZt-18-rAC"/>
-                            <constraint firstItem="GR9-0r-jzM" firstAttribute="top" secondItem="CEI-hX-C3k" secondAttribute="bottom" constant="31" id="bNu-MD-fel"/>
                             <constraint firstItem="pJd-98-1JA" firstAttribute="trailing" secondItem="hl5-aP-ukM" secondAttribute="trailing" id="evz-BS-lpU"/>
                             <constraint firstItem="6sW-KZ-xmb" firstAttribute="top" secondItem="8am-Pu-JH6" secondAttribute="bottom" constant="8" symbolic="YES" id="fNb-cr-PEQ"/>
                             <constraint firstItem="8am-Pu-JH6" firstAttribute="leading" secondItem="fio-tC-6Bj" secondAttribute="leading" id="i9M-th-6h6"/>
                             <constraint firstItem="niE-LP-YMj" firstAttribute="centerX" secondItem="ko0-ao-ohS" secondAttribute="centerX" id="lFw-KH-6G6"/>
-                            <constraint firstItem="CEI-hX-C3k" firstAttribute="trailing" secondItem="l7S-aV-33f" secondAttribute="trailing" id="nSx-FJ-4Ll"/>
                             <constraint firstItem="8am-Pu-JH6" firstAttribute="trailing" secondItem="fio-tC-6Bj" secondAttribute="trailing" id="nU8-Jk-6gy"/>
                             <constraint firstItem="6sW-KZ-xmb" firstAttribute="trailing" secondItem="8am-Pu-JH6" secondAttribute="trailing" id="pHr-qD-qC1"/>
-                            <constraint firstItem="CEI-hX-C3k" firstAttribute="top" secondItem="l7S-aV-33f" secondAttribute="bottom" constant="8" symbolic="YES" id="sWk-rc-x6b"/>
                             <constraint firstItem="6sW-KZ-xmb" firstAttribute="leading" secondItem="8am-Pu-JH6" secondAttribute="leading" id="t87-fg-u00"/>
                         </constraints>
                     </view>
@@ -129,7 +124,6 @@
                         <outlet property="carDriverLabel" destination="8am-Pu-JH6" id="ga8-yn-Cee"/>
                         <outlet property="carlicenceNumber" destination="hl5-aP-ukM" id="2kg-ja-5EU"/>
                         <outlet property="cartype" destination="WLd-oH-Nk6" id="qsN-Zq-PUj"/>
-                        <outlet property="colorName" destination="CEI-hX-C3k" id="qIx-JT-qJs"/>
                         <outlet property="colorPicker" destination="l7S-aV-33f" id="4XZ-02-h25"/>
                     </connections>
                 </viewController>

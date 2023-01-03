@@ -32,4 +32,19 @@ class Firebase {
           completion(snapshot)
         });
     }
+    
+    // MARK: TODO:- This Method for Write data to dicrect child
+    // ---------------------------------------------------------
+    public func write(value:[String:Any],complention: @escaping () -> ()) {
+        ref?.setValue(value){
+            (error:Error?, ref:DatabaseReference) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            else {
+                complention()
+            }
+        }
+    }
+    // ---------------------------------------------------------
 }
