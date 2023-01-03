@@ -7,6 +7,7 @@
 
 import UIKit
 import BCryptSwift
+import FirebaseDatabase
 
 class loginViewController: UIViewController {
     
@@ -72,22 +73,40 @@ class loginViewController: UIViewController {
     
     // MARK: TODO: This Method For Signup Method
     func signupOperation() {
-        guard let telephone = telephoneTextField.text else { return }
-        guard let password  = passwordTextField.text else { return }
-        
-        let numberOfRound = BCryptSwift.generateSaltWithNumberOfRounds(5)
-        
-        guard let hashedpassword = BCryptSwift.hashPassword(password, withSalt: numberOfRound) else {
-            print("Error in hashing")
-            return
-        }
-        
-        let nextVc = storyboard?.instantiateViewController(withIdentifier: "CarDetailsViewController") as! CarDetailsViewController
-        nextVc.data = ["telephone": telephone, "password": hashedpassword]
-        nextVc.modalPresentationStyle = .fullScreen
-        
-        present(nextVc, animated: true)
+        CheckTelephoneNumber()
     }
     // -------------------------------------------
+    
+    func CheckTelephoneNumber() {
+        firebase.SetRefernce(ref: Database.database().reference().child("users"))
+        
+        firebase.observeDataWithoutListnerWithCondition(k: "telephone", v: telephoneTextField.text!) { [weak self] snapshot in
+            guard let self = self else { return }
+            
+            if snapshot.exists() {
+                let alert = UIAlertController(title: "تنبيه", message: "رقم الهاتف مستخدم بالفعل", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "تمت", style: .cancel))
+                self.present(alert, animated: true)
+            }
+            else {
+                guard let telephone = self.telephoneTextField.text else { return }
+                guard let password  = self.passwordTextField.text else { return }
+                
+                let numberOfRound = BCryptSwift.generateSaltWithNumberOfRounds(5)
+                
+                guard let hashedpassword = BCryptSwift.hashPassword(password, withSalt: numberOfRound) else {
+                    print("Error in hashing")
+                    return
+                }
+                
+                
+                let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "CarDetailsViewController") as! CarDetailsViewController
+                nextVc.data = ["telephone": telephone, "password": hashedpassword]
+                nextVc.modalPresentationStyle = .fullScreen
+                
+                self.present(nextVc, animated: true)
+            }
+        }
+    }
 
 }

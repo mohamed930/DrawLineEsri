@@ -33,6 +33,21 @@ class Firebase {
         });
     }
     
+    func observeDataWithoutListnerWithCondition(k:String,v:String,completion: @escaping (DataSnapshot) -> Void) {
+        
+        ref?.queryOrdered(byChild: k).queryEqual(toValue: v).observeSingleEvent(of: .value, with: { snapshot in
+            completion(snapshot)
+        })
+        
+//        ref?.queryOrdered(byChild: k).queryEqual(toValue: v).getData(completion:  { error, snapshot in
+//          guard error == nil else {
+//            print(error!.localizedDescription)
+//            return;
+//          }
+//          completion(snapshot)
+//        });
+    }
+    
     // MARK: TODO:- This Method for Write data to dicrect child
     // ---------------------------------------------------------
     public func write(value:[String:Any],complention: @escaping () -> ()) {

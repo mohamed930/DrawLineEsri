@@ -17,6 +17,7 @@
 		D372AC05294B78AF00C31EBB /* responseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372AC04294B78AF00C31EBB /* responseModel.swift */; };
 		D38FC6FB2957063700E62017 /* track.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D38FC6FA2957063700E62017 /* track.gpx */; };
 		D38FC6FD29570B8F00E62017 /* BackgroundThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38FC6FC29570B8F00E62017 /* BackgroundThread.swift */; };
+		D398C5382964EDF8009F31DB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398C5372964EDF7009F31DB /* UIColor.swift */; };
 		D39EA9892964D360002282C6 /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EA9882964D360002282C6 /* CarDetailsViewController.swift */; };
 		D39F7C24294B5D5100C132CD /* CompersionTwoRoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F7C23294B5D5100C132CD /* CompersionTwoRoutesViewController.swift */; };
 		D39F7C27294B5E0D00C132CD /* Esri.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F7C26294B5E0D00C132CD /* Esri.swift */; };
@@ -44,6 +45,7 @@
 		D372AC04294B78AF00C31EBB /* responseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseModel.swift; sourceTree = "<group>"; };
 		D38FC6FA2957063700E62017 /* track.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = track.gpx; sourceTree = "<group>"; };
 		D38FC6FC29570B8F00E62017 /* BackgroundThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundThread.swift; sourceTree = "<group>"; };
+		D398C5372964EDF7009F31DB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D39EA9882964D360002282C6 /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
 		D39F7C23294B5D5100C132CD /* CompersionTwoRoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompersionTwoRoutesViewController.swift; sourceTree = "<group>"; };
 		D39F7C26294B5E0D00C132CD /* Esri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esri.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				D3F1B3AA294107BB00331AD5 /* Assets.xcassets */,
 				D3F1B3AF294107BB00331AD5 /* Info.plist */,
 				D38FC6FC29570B8F00E62017 /* BackgroundThread.swift */,
+				D398C5372964EDF7009F31DB /* UIColor.swift */,
 			);
 			path = Assists;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				D3CEA5322958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift in Sources */,
 				D3F1B3A6294107B900331AD5 /* MapViewController.swift in Sources */,
 				D372AC03294B756F00C31EBB /* Firebase.swift in Sources */,
+				D398C5382964EDF8009F31DB /* UIColor.swift in Sources */,
 				D31F786F2942603800E02FD5 /* GeoCoderMapViewController.swift in Sources */,
 				D39F7C24294B5D5100C132CD /* CompersionTwoRoutesViewController.swift in Sources */,
 				D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */,
