@@ -58,17 +58,54 @@ class loginViewController: UIViewController {
     }
     
     func loginOperation() {
-        /*guard let login = BCryptSwift.verifyPassword(passwordTextField.text!, matchesHash: hashedpassword) else {
-            print("Failed in login")
-            return
-        }
+        firebase.SetRefernce(ref: Database.database().reference().child("users"))
         
-        if login {
-            print("login is success")
+        firebase.observeDataWithoutListnerWithCondition(k: "telephone", v: telephoneTextField.text!) { [weak self] snapshot in
+            guard let self = self else { return }
+            
+            if snapshot.exists() {
+                guard let value = snapshot.value as? Dictionary<String,Any> else {return}
+                
+                guard let data = value.first?.value else { return }
+                
+                guard let jsonData = try? JSONSerialization.data(withJSONObject: data, options: []) else {
+                    print("Error in JSON Serialization")
+                    return}
+
+                guard let responseObj = try? JSONDecoder().decode(userModel.self, from: jsonData) else {
+                    print("Error in Decode")
+                    return}
+                
+                guard let login = BCryptSwift.verifyPassword(self.passwordTextField.text!, matchesHash: responseObj.password) else {
+                    print("Failed in login")
+                    return
+                }
+
+                if login {
+                    let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "TrackCarViewController") as! TrackCarViewController
+                    
+                    nextVc.modalPresentationStyle = .fullScreen
+                    
+                    self.present(nextVc, animated: true)
+                }
+                else {
+                    let alert = UIAlertController(title: "تنبيه", message: "رقم الهاتف او كلمة المرور غير صحيحه", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "تمت", style: .cancel))
+                    self.present(alert, animated: true)
+                    
+                    self.passwordTextField.text = ""
+                    self.passwordTextField.becomeFirstResponder()
+                }
+            }
+            else {
+                let alert = UIAlertController(title: "تنبيه", message: "رقم الهاتف او كلمة المرور غير صحيحه", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "تمت", style: .cancel))
+                self.present(alert, animated: true)
+                
+                self.passwordTextField.text = ""
+                self.passwordTextField.becomeFirstResponder()
+            }
         }
-        else {
-            print("login isn't success")
-        }*/
     }
     
     // MARK: TODO: This Method For Signup Method

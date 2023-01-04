@@ -37,15 +37,10 @@ class Firebase {
         
         ref?.queryOrdered(byChild: k).queryEqual(toValue: v).observeSingleEvent(of: .value, with: { snapshot in
             completion(snapshot)
+        }, withCancel: { error in
+            print(error.localizedDescription)
         })
         
-//        ref?.queryOrdered(byChild: k).queryEqual(toValue: v).getData(completion:  { error, snapshot in
-//          guard error == nil else {
-//            print(error!.localizedDescription)
-//            return;
-//          }
-//          completion(snapshot)
-//        });
     }
     
     // MARK: TODO:- This Method for Write data to dicrect child

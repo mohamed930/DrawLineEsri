@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B49EC11C06EFCB69AB4D402 /* Pods_trackingEsri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33339151202147B7BDF93831 /* Pods_trackingEsri.framework */; };
 		D31F786F2942603800E02FD5 /* GeoCoderMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */; };
+		D334235B296616D100E78663 /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334235A296616D100E78663 /* userModel.swift */; };
 		D34BB7E5294B961F003927C0 /* CompersionTwoRoutesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34BB7E4294B961F003927C0 /* CompersionTwoRoutesExtensions.swift */; };
 		D35B68902964AEEA000F7238 /* MultiTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35B688F2964AEEA000F7238 /* MultiTracking.storyboard */; };
 		D35B68932964AF37000F7238 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B68922964AF37000F7238 /* loginViewController.swift */; };
@@ -23,6 +24,7 @@
 		D39F7C27294B5E0D00C132CD /* Esri.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F7C26294B5E0D00C132CD /* Esri.swift */; };
 		D3CEA5302958CA2900D5F2BA /* NavigateRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEA52F2958CA2900D5F2BA /* NavigateRouteViewController.swift */; };
 		D3CEA5322958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEA5312958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift */; };
+		D3EB736D296635C00060CE36 /* TrackCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB736C296635C00060CE36 /* TrackCarViewController.swift */; };
 		D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A1294107B900331AD5 /* AppDelegate.swift */; };
 		D3F1B3A4294107B900331AD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A3294107B900331AD5 /* SceneDelegate.swift */; };
 		D3F1B3A6294107B900331AD5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A5294107B900331AD5 /* MapViewController.swift */; };
@@ -37,6 +39,7 @@
 		6B109ADB9F01CAE1498FAEE1 /* Pods-trackingEsri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trackingEsri.release.xcconfig"; path = "Target Support Files/Pods-trackingEsri/Pods-trackingEsri.release.xcconfig"; sourceTree = "<group>"; };
 		829DEB84850843C5C43C69C1 /* Pods-trackingEsri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trackingEsri.debug.xcconfig"; path = "Target Support Files/Pods-trackingEsri/Pods-trackingEsri.debug.xcconfig"; sourceTree = "<group>"; };
 		D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoderMapViewController.swift; sourceTree = "<group>"; };
+		D334235A296616D100E78663 /* userModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
 		D34BB7E4294B961F003927C0 /* CompersionTwoRoutesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompersionTwoRoutesExtensions.swift; sourceTree = "<group>"; };
 		D35B688F2964AEEA000F7238 /* MultiTracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MultiTracking.storyboard; sourceTree = "<group>"; };
 		D35B68922964AF37000F7238 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		D39F7C26294B5E0D00C132CD /* Esri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esri.swift; sourceTree = "<group>"; };
 		D3CEA52F2958CA2900D5F2BA /* NavigateRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateRouteViewController.swift; sourceTree = "<group>"; };
 		D3CEA5312958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateRouteViewControllerExtension.swift; sourceTree = "<group>"; };
+		D3EB736C296635C00060CE36 /* TrackCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCarViewController.swift; sourceTree = "<group>"; };
 		D3F1B39E294107B900331AD5 /* trackingEsri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trackingEsri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F1B3A1294107B900331AD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3F1B3A3294107B900331AD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			children = (
 				D35B68922964AF37000F7238 /* loginViewController.swift */,
 				D39EA9882964D360002282C6 /* CarDetailsViewController.swift */,
+				D3EB736C296635C00060CE36 /* TrackCarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			children = (
 				D3F1B3BA29410B4500331AD5 /* pointModel.swift */,
 				D372AC04294B78AF00C31EBB /* responseModel.swift */,
+				D334235A296616D100E78663 /* userModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -358,8 +364,10 @@
 				D3CEA5322958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift in Sources */,
 				D3F1B3A6294107B900331AD5 /* MapViewController.swift in Sources */,
 				D372AC03294B756F00C31EBB /* Firebase.swift in Sources */,
+				D3EB736D296635C00060CE36 /* TrackCarViewController.swift in Sources */,
 				D398C5382964EDF8009F31DB /* UIColor.swift in Sources */,
 				D31F786F2942603800E02FD5 /* GeoCoderMapViewController.swift in Sources */,
+				D334235B296616D100E78663 /* userModel.swift in Sources */,
 				D39F7C24294B5D5100C132CD /* CompersionTwoRoutesViewController.swift in Sources */,
 				D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */,
 				D38FC6FD29570B8F00E62017 /* BackgroundThread.swift in Sources */,
