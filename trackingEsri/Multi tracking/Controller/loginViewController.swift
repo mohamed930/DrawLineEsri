@@ -21,6 +21,7 @@ class loginViewController: UIViewController {
     
     var flag = false
     var firebase = Firebase()
+    let storage: LocalStorageProtocol = LocalStorage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,11 @@ class loginViewController: UIViewController {
                 }
 
                 if login {
+                    
+                    // write complex object
+                    let user = UserlocalModel(telephone: self.telephoneTextField.text!, driverName: responseObj.driverName, carName: responseObj.carType, liecenceNumber: responseObj.licenceNumber, password: responseObj.password)
+                    self.storage.writeStoreable(key: LocalStorageKeys.user, value: user)
+                    
                     let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "TrackCarViewController") as! TrackCarViewController
                     
                     nextVc.modalPresentationStyle = .fullScreen
@@ -124,6 +130,9 @@ class loginViewController: UIViewController {
                 let alert = UIAlertController(title: "تنبيه", message: "رقم الهاتف مستخدم بالفعل", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "تمت", style: .cancel))
                 self.present(alert, animated: true)
+                
+                self.passwordTextField.text = ""
+                self.passwordTextField.becomeFirstResponder()
             }
             else {
                 guard let telephone = self.telephoneTextField.text else { return }

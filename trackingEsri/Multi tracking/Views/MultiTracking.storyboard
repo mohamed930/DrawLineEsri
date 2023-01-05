@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجل سيارتك" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niE-LP-YMj">
-                                <rect key="frame" x="103" y="60" width="169" height="38.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم السائق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fio-tC-6Bj">
                                 <rect key="frame" x="16" y="131.33333333333334" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -86,6 +81,25 @@
                                     <action selector="loginAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3Xg-88-abY"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EP4-Gq-D11">
+                                <rect key="frame" x="2" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="سجل سيارتك" id="NDt-n1-FIq">
+                                        <barButtonItem key="leftBarButtonItem" id="jSc-lz-rKq">
+                                            <imageReference key="image" image="chevron.backward.circle.fill" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
+                                                <hierarchicalColors>
+                                                    <color systemColor="labelColor"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                            <connections>
+                                                <action selector="BackButtonAction" destination="56m-xe-hRl" id="Wso-tC-ra6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ko0-ao-ohS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -96,12 +110,12 @@
                             <constraint firstItem="0aT-Kf-jhl" firstAttribute="top" secondItem="WLd-oH-Nk6" secondAttribute="bottom" constant="9" id="5Zc-9H-oUD"/>
                             <constraint firstItem="hl5-aP-ukM" firstAttribute="leading" secondItem="6sW-KZ-xmb" secondAttribute="leading" id="68p-a0-o0a"/>
                             <constraint firstItem="WLd-oH-Nk6" firstAttribute="leading" secondItem="pJd-98-1JA" secondAttribute="leading" id="6rT-tR-iwx"/>
+                            <constraint firstItem="EP4-Gq-D11" firstAttribute="leading" secondItem="ko0-ao-ohS" secondAttribute="leading" constant="2" id="7XB-3w-D9e"/>
                             <constraint firstItem="WLd-oH-Nk6" firstAttribute="top" secondItem="pJd-98-1JA" secondAttribute="bottom" constant="8" symbolic="YES" id="8ia-qU-Z9I"/>
-                            <constraint firstItem="niE-LP-YMj" firstAttribute="top" secondItem="ko0-ao-ohS" secondAttribute="top" constant="16" id="Bh4-hP-xcf"/>
                             <constraint firstItem="0aT-Kf-jhl" firstAttribute="trailing" secondItem="WLd-oH-Nk6" secondAttribute="trailing" id="EIB-yd-ANF"/>
                             <constraint firstItem="fio-tC-6Bj" firstAttribute="leading" secondItem="ko0-ao-ohS" secondAttribute="leading" constant="16" id="Ekz-Wr-ymy"/>
                             <constraint firstItem="GR9-0r-jzM" firstAttribute="top" secondItem="l7S-aV-33f" secondAttribute="bottom" constant="39.666666666666742" id="HeM-KU-vUr"/>
-                            <constraint firstItem="fio-tC-6Bj" firstAttribute="top" secondItem="niE-LP-YMj" secondAttribute="bottom" constant="32.666666666666657" id="LbS-uD-yPX"/>
+                            <constraint firstItem="EP4-Gq-D11" firstAttribute="trailing" secondItem="ko0-ao-ohS" secondAttribute="trailing" constant="2" id="J1y-I5-tmS"/>
                             <constraint firstItem="hl5-aP-ukM" firstAttribute="top" secondItem="6sW-KZ-xmb" secondAttribute="bottom" constant="8" symbolic="YES" id="Lns-J4-xDa"/>
                             <constraint firstItem="hl5-aP-ukM" firstAttribute="trailing" secondItem="6sW-KZ-xmb" secondAttribute="trailing" id="N0m-WP-h1q"/>
                             <constraint firstItem="pJd-98-1JA" firstAttribute="top" secondItem="hl5-aP-ukM" secondAttribute="bottom" constant="8" symbolic="YES" id="NxZ-pd-85Z"/>
@@ -109,12 +123,13 @@
                             <constraint firstItem="GR9-0r-jzM" firstAttribute="leading" secondItem="ko0-ao-ohS" secondAttribute="leading" constant="21" id="R5i-Qt-TnE"/>
                             <constraint firstItem="WLd-oH-Nk6" firstAttribute="trailing" secondItem="pJd-98-1JA" secondAttribute="trailing" id="RdY-U4-lXB"/>
                             <constraint firstItem="pJd-98-1JA" firstAttribute="leading" secondItem="hl5-aP-ukM" secondAttribute="leading" id="TnQ-TH-T3x"/>
+                            <constraint firstItem="EP4-Gq-D11" firstAttribute="top" secondItem="ko0-ao-ohS" secondAttribute="top" id="Toa-Mj-KvG"/>
+                            <constraint firstItem="fio-tC-6Bj" firstAttribute="top" secondItem="EP4-Gq-D11" secondAttribute="bottom" constant="43.333333333333343" id="Un9-7t-Py0"/>
                             <constraint firstItem="l7S-aV-33f" firstAttribute="centerX" secondItem="ko0-ao-ohS" secondAttribute="centerX" id="ZtV-dw-stS"/>
                             <constraint firstItem="0aT-Kf-jhl" firstAttribute="leading" secondItem="WLd-oH-Nk6" secondAttribute="leading" id="aZt-18-rAC"/>
                             <constraint firstItem="pJd-98-1JA" firstAttribute="trailing" secondItem="hl5-aP-ukM" secondAttribute="trailing" id="evz-BS-lpU"/>
                             <constraint firstItem="6sW-KZ-xmb" firstAttribute="top" secondItem="8am-Pu-JH6" secondAttribute="bottom" constant="8" symbolic="YES" id="fNb-cr-PEQ"/>
                             <constraint firstItem="8am-Pu-JH6" firstAttribute="leading" secondItem="fio-tC-6Bj" secondAttribute="leading" id="i9M-th-6h6"/>
-                            <constraint firstItem="niE-LP-YMj" firstAttribute="centerX" secondItem="ko0-ao-ohS" secondAttribute="centerX" id="lFw-KH-6G6"/>
                             <constraint firstItem="8am-Pu-JH6" firstAttribute="trailing" secondItem="fio-tC-6Bj" secondAttribute="trailing" id="nU8-Jk-6gy"/>
                             <constraint firstItem="6sW-KZ-xmb" firstAttribute="trailing" secondItem="8am-Pu-JH6" secondAttribute="trailing" id="pHr-qD-qC1"/>
                             <constraint firstItem="6sW-KZ-xmb" firstAttribute="leading" secondItem="8am-Pu-JH6" secondAttribute="leading" id="t87-fg-u00"/>
@@ -234,8 +249,20 @@
                     <view key="view" contentMode="scaleToFill" id="YwB-cR-p9b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-pV-zSj">
+                                <rect key="frame" x="166.66666666666666" y="395.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1JW-tH-gcI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V1c-pV-zSj" firstAttribute="centerX" secondItem="YwB-cR-p9b" secondAttribute="centerX" id="UV2-Ss-j4e"/>
+                            <constraint firstItem="V1c-pV-zSj" firstAttribute="centerY" secondItem="YwB-cR-p9b" secondAttribute="centerY" id="ujA-LJ-9Xe"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSH-un-Hsd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -244,8 +271,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
