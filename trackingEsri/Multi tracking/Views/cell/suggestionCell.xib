@@ -13,34 +13,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="114" id="KGk-i7-Jjw" customClass="suggestionCell" customModule="trackingEsri" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="418" height="114"/>
+            <rect key="frame" x="0.0" y="0.0" width="378" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="418" height="114"/>
+                <rect key="frame" x="0.0" y="0.0" width="378" height="114"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zpu-5O-1Z4">
-                        <rect key="frame" x="350" y="14.999999999999996" width="48" height="46.333333333333329"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="48" id="Q96-CW-UgA"/>
-                            <constraint firstAttribute="height" constant="48" id="zJZ-QD-1Ev"/>
-                        </constraints>
-                        <imageReference key="image" image="location.fill" catalog="system" renderingMode="hierarchical-single">
-                            <hierarchicalColors>
-                                <color systemColor="labelColor"/>
-                                <color systemColor="secondaryLabelColor"/>
-                                <color systemColor="tertiaryLabelColor"/>
-                            </hierarchicalColors>
-                        </imageReference>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="٤٫٥ كم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeN-53-mc6">
-                        <rect key="frame" x="351.33333333333331" y="70" width="45.666666666666686" height="27.666666666666671"/>
+                        <rect key="frame" x="310.33333333333331" y="80" width="45.666666666666686" height="23.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHr-nZ-URx">
-                        <rect key="frame" x="109.66666666666669" y="56.666666666666657" width="56" height="33.333333333333336"/>
+                        <rect key="frame" x="65.666666666666671" y="56.666666666666657" width="56" height="33.333333333333336"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="ani-at-2qu"/>
@@ -61,7 +47,7 @@
                         </state>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CPy-Fu-NXa">
-                        <rect key="frame" x="173.66666666666663" y="31.666666666666671" width="161.33333333333337" height="51"/>
+                        <rect key="frame" x="129.66666666666663" y="31.666666666666671" width="161.33333333333337" height="51"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم السائق: زياد احمد" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.45000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="dQM-dV-hB2">
                                 <rect key="frame" x="0.0" y="0.0" width="161.33333333333334" height="21.666666666666668"/>
@@ -77,23 +63,33 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4K6-xJ-L4Z" customClass="AnimationView" customModule="Lottie">
+                        <rect key="frame" x="307" y="20" width="52" height="52"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="4K6-xJ-L4Z" secondAttribute="height" multiplier="1:1" id="3zK-nE-FCA"/>
+                            <constraint firstAttribute="width" constant="52" id="4mJ-fk-hhg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="gps"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="GeN-53-mc6" firstAttribute="centerX" secondItem="4K6-xJ-L4Z" secondAttribute="centerX" id="AxC-7b-8s2"/>
+                    <constraint firstItem="4K6-xJ-L4Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="GCT-QM-2t0"/>
                     <constraint firstItem="27H-F9-MFp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OAr-bY-O24"/>
+                    <constraint firstItem="4K6-xJ-L4Z" firstAttribute="leading" secondItem="CPy-Fu-NXa" secondAttribute="trailing" constant="16" id="Sbt-6t-nf1"/>
                     <constraint firstItem="cHr-nZ-URx" firstAttribute="centerY" secondItem="xli-eC-u5t" secondAttribute="centerY" id="TZg-bw-0D9"/>
-                    <constraint firstItem="GeN-53-mc6" firstAttribute="centerX" secondItem="zpu-5O-1Z4" secondAttribute="centerX" id="WCp-KS-2ON"/>
-                    <constraint firstAttribute="trailing" secondItem="zpu-5O-1Z4" secondAttribute="trailing" constant="20" symbolic="YES" id="aJH-RE-qGZ"/>
                     <constraint firstItem="CPy-Fu-NXa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="27H-F9-MFp" secondAttribute="trailing" constant="76" id="jr8-3k-jz0"/>
-                    <constraint firstAttribute="bottom" secondItem="GeN-53-mc6" secondAttribute="bottom" constant="16.5" id="ovX-mU-NP3"/>
-                    <constraint firstItem="GeN-53-mc6" firstAttribute="top" secondItem="zpu-5O-1Z4" secondAttribute="bottom" constant="8" symbolic="YES" id="owb-o3-1JX"/>
-                    <constraint firstItem="zpu-5O-1Z4" firstAttribute="leading" secondItem="CPy-Fu-NXa" secondAttribute="trailing" constant="15" id="qlk-PI-NKL"/>
+                    <constraint firstItem="GeN-53-mc6" firstAttribute="top" secondItem="4K6-xJ-L4Z" secondAttribute="bottom" constant="7.9999999999999858" id="lb4-y1-jB0"/>
+                    <constraint firstAttribute="trailing" secondItem="4K6-xJ-L4Z" secondAttribute="trailing" constant="19" id="sP7-9U-4qh"/>
                     <constraint firstItem="CPy-Fu-NXa" firstAttribute="leading" secondItem="cHr-nZ-URx" secondAttribute="trailing" constant="8" symbolic="YES" id="t7J-5m-mu9"/>
-                    <constraint firstItem="zpu-5O-1Z4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="vI0-p9-EdN"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <constraints>
                 <constraint firstItem="27H-F9-MFp" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="10" id="2hV-1y-TIP"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="GeN-53-mc6" secondAttribute="bottom" constant="10.666666666666671" id="d4H-Ut-Vuj"/>
                 <constraint firstItem="CPy-Fu-NXa" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="qGT-21-GnI"/>
             </constraints>
             <connections>
@@ -102,23 +98,16 @@
                 <outlet property="deaitalsButton" destination="27H-F9-MFp" id="w3I-4k-tFD"/>
                 <outlet property="driverNameLabel" destination="dQM-dV-hB2" id="dZc-OL-6AB"/>
                 <outlet property="locationDistanceLabel" destination="GeN-53-mc6" id="h6E-d7-cOT"/>
-                <outlet property="locationImageView" destination="zpu-5O-1Z4" id="e0Q-d0-DWM"/>
+                <outlet property="locationImageView" destination="4K6-xJ-L4Z" id="nHg-VN-NIT"/>
             </connections>
-            <point key="canvasLocation" x="288" y="64"/>
+            <point key="canvasLocation" x="388.80000000000001" y="50.246305418719217"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="arrow.up.forward.app.fill" catalog="system" width="128" height="114"/>
         <image name="car" catalog="system" width="128" height="93"/>
-        <image name="location.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

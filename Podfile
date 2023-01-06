@@ -12,5 +12,6 @@ target 'trackingEsri' do
   pod 'IQKeyboardManagerSwift'
   pod "BCryptSwift"
   pod "Colorful"
+  pod 'lottie-ios'
 
 end

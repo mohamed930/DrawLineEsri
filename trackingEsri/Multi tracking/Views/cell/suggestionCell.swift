@@ -7,10 +7,11 @@
 
 import UIKit
 import CoreLocation
+import Lottie
 
 class suggestionCell: UITableViewCell {
     
-    @IBOutlet weak var locationImageView:UIImageView!
+    @IBOutlet weak var locationImageView:AnimationView!
     @IBOutlet weak var locationDistanceLabel:UILabel!
     
     @IBOutlet weak var driverNameLabel:UILabel!
@@ -22,12 +23,28 @@ class suggestionCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        LoadAnimation()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func LoadAnimation() {
+        // 1. Set animation content mode
+        locationImageView.contentMode = .scaleAspectFill
+          
+        // 2. Set animation loop mode
+        locationImageView.loopMode = .loop
+          
+        // 3. Adjust animation speed
+        locationImageView.animationSpeed = 0.5
+          
+        // 4. Play animation
+        locationImageView.play()
     }
     
     func ConfigureCell(ob: vehiclesModel, currenctlati: Double, currentlong: Double) {
@@ -51,8 +68,6 @@ class suggestionCell: UITableViewCell {
         let doubleNumber = String(format: "%.2f", numberD!)
         
         let str = doubleNumber.convertedDigitsToLocale(Locale(identifier: "FA"))
-        
-        print(doubleNumber)
         
         return str
     }

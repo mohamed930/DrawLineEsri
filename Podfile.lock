@@ -24,6 +24,7 @@ PODS:
     - GoogleUtilities/Environment
   - IQKeyboardManagerSwift (6.5.9)
   - leveldb-library (1.22.1)
+  - lottie-ios (3.4.3)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - Colorful
   - FirebaseDatabase
   - IQKeyboardManagerSwift
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
@@ -50,6 +52,7 @@ SPEC REPOS:
     - GoogleUtilities
     - IQKeyboardManagerSwift
     - leveldb-library
+    - lottie-ios
     - nanopb
     - PromisesObjC
 
@@ -64,9 +67,10 @@ SPEC CHECKSUMS:
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  lottie-ios: 9ae750cdc7820fecbd3c2f0cfc493038208fcdc4
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 4f8e73b8dcfe9d17a139e5dea4f5ca4af375540f
+PODFILE CHECKSUM: bbbcb88164a333502b6aba66c3c4bba1727184ad
 
 COCOAPODS: 1.11.3

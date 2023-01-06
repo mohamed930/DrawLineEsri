@@ -70,7 +70,22 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
         
         cell.ConfigureCell(ob: carsList[indexPath.row], currenctlati: currentlatitude, currentlong: currentlongitude)
         
+        cell.deaitalsButton.tag = indexPath.row
+                    cell.deaitalsButton.addTarget(self,
+                    action: #selector(ShowtitleButton),
+                    for: .touchUpInside)
+        
         return cell
+    }
+    
+    @objc func ShowtitleButton (_ sender:UIButton) {
+        let myIndexPath = NSIndexPath(row: sender.tag, section: 0)
+                    
+        searchBar.searchTextField.text = carsList[myIndexPath.row].driverName
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(120)
     }
     
 }
