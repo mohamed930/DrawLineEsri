@@ -85,14 +85,14 @@ class loginViewController: UIViewController {
                 if login {
                     
                     // write complex object
-                    let user = UserlocalModel(telephone: self.telephoneTextField.text!, driverName: responseObj.driverName, carName: responseObj.carType, liecenceNumber: responseObj.licenceNumber, password: responseObj.password)
+                    let user = UserlocalModel(telephone: self.telephoneTextField.text!, driverName: responseObj.driverName, carName: responseObj.carType, liecenceNumber: responseObj.licenceNumber, password: responseObj.password, uid: responseObj.uid)
                     self.storage.writeStoreable(key: LocalStorageKeys.user, value: user)
                     
-                    let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "TrackCarViewController") as! TrackCarViewController
+                    let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "TrackCarViewController")
                     
-                    nextVc.modalPresentationStyle = .fullScreen
+                    nextVc!.modalPresentationStyle = .fullScreen
                     
-                    self.present(nextVc, animated: true)
+                    self.present(nextVc!, animated: true)
                 }
                 else {
                     let alert = UIAlertController(title: "تنبيه", message: "رقم الهاتف او كلمة المرور غير صحيحه", preferredStyle: .alert)

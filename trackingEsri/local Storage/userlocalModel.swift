@@ -9,6 +9,7 @@ import Foundation
 
 
 struct UserlocalModel: Codable, Storeable {
+    let uid: String
     let telephone: String
     let driverName: String
     let carName: String
@@ -21,7 +22,8 @@ struct UserlocalModel: Codable, Storeable {
         return encoded
     }
     
-    init(telephone: String,driverName: String, carName: String, liecenceNumber: String, password: String) {
+    init(telephone: String,driverName: String, carName: String, liecenceNumber: String, password: String,uid: String) {
+        self.uid = uid
         self.telephone = telephone
         self.driverName = driverName
         self.carName = carName

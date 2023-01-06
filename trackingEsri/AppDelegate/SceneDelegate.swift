@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: scence)
             
             let storyBoard = UIStoryboard(name: "MultiTracking", bundle: nil)
-            let nextVc = storyBoard.instantiateViewController(withIdentifier: "TrackCarViewController") as! TrackCarViewController
+            let nextVc = storyBoard.instantiateViewController(withIdentifier: "TrackCarViewController")
             nextVc.modalPresentationStyle = .fullScreen
             
             window.rootViewController = nextVc

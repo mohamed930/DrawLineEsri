@@ -32,7 +32,7 @@ class Esri {
         // mapView.touchDelegate = self
 
         // Add the graphics overlay.
-        mapView.graphicsOverlays.add(self.graphicsOverlay)
+        mapView.graphicsOverlays.add(graphicsOverlay)
         mapView.graphicsOverlays.add(routeGraphicsOverlay)
         
         // Zoom to a specific extent.
@@ -47,6 +47,9 @@ class Esri {
 
         let graphic = graphicForPoint(normalizedPoint, Attribute: attribute)
         graphicsOverlay.graphics.add(graphic)
+        
+        graphicsOverlay.isVisible = true
+        mapView.setViewpointGeometry(graphicsOverlay.extent, padding: 30, completion: nil)
     }
     
     func ShowCalloutForPoint(graphic: AGSGraphic,point: AGSPoint) {
@@ -71,30 +74,22 @@ class Esri {
         }
     }
     
-    func UpdatePoint(pointNumber: String,location: locationModel) {
-        switch pointNumber {
-        case "one":
-            if let graphic = (graphicsOverlay.graphics as? [AGSGraphic])?.first(where: {
-                ($0.attributes["title"] as? String) == "car1"
-            }) {
-                // Move the graphic
-                graphic.geometry = AGSPoint(x: location.long, y: location.lati, spatialReference: .wgs84())
-                points[1] = AGSPoint(x: location.long, y: location.lati, spatialReference: .wgs84())
-                
+    func UpdatePoint(location: locationModel, key: String, value: String) {
+        if let graphic = (graphicsOverlay.graphics as? [AGSGraphic])?.first(where: {
+            ($0.attributes[key] as? String) == value
+        }) {
+            // Move the graphic
+            graphic.geometry = AGSPoint(x: location.long, y: location.lati, spatialReference: .wgs84())
+            points[1] = AGSPoint(x: location.long, y: location.lati, spatialReference: .wgs84())
+            
 //                // Or remove the graphic
 //                overlay.graphics.remove(graphic)
-            }
-            break
-        case "two":
-            break
-        default:
-            print("Not Found!!")
         }
     }
     
     // MARK: TODO: Method returns a graphic object for the specified point and attributes.
     private func graphicForPoint(_ point: AGSPoint,Attribute: [String: AnyObject]) -> AGSGraphic {
-        let markerImage = UIImage(named: "redPin")!
+        let markerImage = UIImage(named: "carpine")!
         let symbol = AGSPictureMarkerSymbol(image: markerImage)
         symbol.leaderOffsetY = markerImage.size.height / 2
         symbol.offsetY = markerImage.size.height / 2

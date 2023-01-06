@@ -99,7 +99,7 @@ class CompersionTwoRoutesViewController: UIViewController {
             }
             else {
                 print("Update point")
-                self.esri.UpdatePoint(pointNumber: "one", location: responseObj[0].vehicals.location)
+                self.esri.UpdatePoint(location: responseObj[0].vehicals.location,key: "title",value: "car1")
             }
             
             self.esri.getDefaultParameters()

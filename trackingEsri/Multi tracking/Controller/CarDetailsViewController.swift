@@ -73,6 +73,7 @@ class CarDetailsViewController: UIViewController {
         let uuid = UUID().uuidString
         firebase.SetRefernce(ref: Database.database().reference().child("users").child(uuid))
         
+        data["uid"] = uuid
         data["driverName"] = carDriverLabel.text!
         data["licenceNumber"] = carlicenceNumber.text!
         data["carType"] = cartype.text!
@@ -81,15 +82,15 @@ class CarDetailsViewController: UIViewController {
         firebase.write(value: data) { [weak self] in
             guard let self = self else { return }
             
-            let userlocalmodel = UserlocalModel(telephone: self.data["telephone"] as! String, driverName: self.data["driverName"] as! String, carName: self.data["carType"] as! String, liecenceNumber: self.data["licenceNumber"] as! String, password: self.data["password"] as! String)
+            let userlocalmodel = UserlocalModel(telephone: self.data["telephone"] as! String, driverName: self.data["driverName"] as! String, carName: self.data["carType"] as! String, liecenceNumber: self.data["licenceNumber"] as! String, password: self.data["password"] as! String,uid: uuid)
             
             self.storage.writeStoreable(key: LocalStorageKeys.user, value: userlocalmodel)
             
-            let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "TrackCarViewController") as! TrackCarViewController
+            let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "TrackCarViewController")
             
-            nextVc.modalPresentationStyle = .fullScreen
+            nextVc!.modalPresentationStyle = .fullScreen
             
-            self.present(nextVc, animated: true)
+            self.present(nextVc!, animated: true)
         }
     }
     

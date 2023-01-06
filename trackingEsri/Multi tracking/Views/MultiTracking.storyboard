@@ -242,36 +242,109 @@
             </objects>
             <point key="canvasLocation" x="132" y="96.798029556650249"/>
         </scene>
-        <!--Track Car View Controller-->
+        <!--اهلا يا احمد-->
         <scene sceneID="V2r-kO-2v7">
             <objects>
-                <viewController storyboardIdentifier="TrackCarViewController" id="LCa-Ex-0wv" customClass="TrackCarViewController" customModule="trackingEsri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LCa-Ex-0wv" customClass="TrackCarViewController" customModule="trackingEsri" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YwB-cR-p9b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-pV-zSj">
-                                <rect key="frame" x="166.66666666666666" y="395.66666666666669" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNA-vv-UNZ" customClass="AGSMapView">
+                                <rect key="frame" x="0.0" y="139" width="375" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE2-XX-Ucj">
+                                <rect key="frame" x="0.0" y="139" width="375" height="673"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6ml-s6-lOI">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="673"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="HFp-xM-NEc">
+                                                <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HFp-xM-NEc" id="frE-G2-Nep">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="6ml-s6-lOI" firstAttribute="leading" secondItem="fE2-XX-Ucj" secondAttribute="leading" id="PoG-J6-3By"/>
+                                    <constraint firstItem="6ml-s6-lOI" firstAttribute="top" secondItem="fE2-XX-Ucj" secondAttribute="top" id="W7U-Q8-ky6"/>
+                                    <constraint firstAttribute="trailing" secondItem="6ml-s6-lOI" secondAttribute="trailing" id="csZ-be-HdE"/>
+                                    <constraint firstAttribute="bottom" secondItem="6ml-s6-lOI" secondAttribute="bottom" id="rcs-2Z-EDy"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-u2-zdV">
+                                <rect key="frame" x="0.0" y="88" width="375" height="51"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1JW-tH-gcI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="V1c-pV-zSj" firstAttribute="centerX" secondItem="YwB-cR-p9b" secondAttribute="centerX" id="UV2-Ss-j4e"/>
-                            <constraint firstItem="V1c-pV-zSj" firstAttribute="centerY" secondItem="YwB-cR-p9b" secondAttribute="centerY" id="ujA-LJ-9Xe"/>
+                            <constraint firstItem="1JW-tH-gcI" firstAttribute="trailing" secondItem="fE2-XX-Ucj" secondAttribute="trailing" id="1FT-tq-Ghd"/>
+                            <constraint firstItem="fE2-XX-Ucj" firstAttribute="top" secondItem="JxE-u2-zdV" secondAttribute="bottom" id="BB0-vi-qmA"/>
+                            <constraint firstItem="1JW-tH-gcI" firstAttribute="trailing" secondItem="JxE-u2-zdV" secondAttribute="trailing" id="Dwy-Yl-PSA"/>
+                            <constraint firstItem="GNA-vv-UNZ" firstAttribute="leading" secondItem="1JW-tH-gcI" secondAttribute="leading" id="JrJ-1r-Hd7"/>
+                            <constraint firstItem="fE2-XX-Ucj" firstAttribute="leading" secondItem="1JW-tH-gcI" secondAttribute="leading" id="LHP-cj-lc0"/>
+                            <constraint firstAttribute="bottom" secondItem="fE2-XX-Ucj" secondAttribute="bottom" id="MiU-WM-5di"/>
+                            <constraint firstAttribute="bottom" secondItem="GNA-vv-UNZ" secondAttribute="bottom" id="P0z-um-fVp"/>
+                            <constraint firstItem="JxE-u2-zdV" firstAttribute="top" secondItem="1JW-tH-gcI" secondAttribute="top" id="Zjd-da-gBE"/>
+                            <constraint firstItem="GNA-vv-UNZ" firstAttribute="top" secondItem="JxE-u2-zdV" secondAttribute="bottom" id="aPO-6s-sMx"/>
+                            <constraint firstItem="1JW-tH-gcI" firstAttribute="trailing" secondItem="GNA-vv-UNZ" secondAttribute="trailing" id="lLg-Go-8tL"/>
+                            <constraint firstItem="JxE-u2-zdV" firstAttribute="leading" secondItem="1JW-tH-gcI" secondAttribute="leading" id="vPu-h1-23G"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="اهلا يا احمد" id="bOe-n1-Hw4">
+                        <barButtonItem key="rightBarButtonItem" title="ملفك الشخصى" id="5j8-oM-TJY">
+                            <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
+                                <hierarchicalColors>
+                                    <color systemColor="labelColor"/>
+                                    <color systemColor="secondaryLabelColor"/>
+                                    <color systemColor="tertiaryLabelColor"/>
+                                </hierarchicalColors>
+                            </imageReference>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="GNA-vv-UNZ" id="VoP-Ef-Ogq"/>
+                        <outlet property="searchBar" destination="JxE-u2-zdV" id="5Ak-Pq-0tD"/>
+                        <outlet property="suggestionTableView" destination="6ml-s6-lOI" id="es5-HZ-mYb"/>
+                        <outlet property="suggestionView" destination="fE2-XX-Ucj" id="Cs9-xu-Prr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSH-un-Hsd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="-151"/>
+            <point key="canvasLocation" x="1964" y="-151.47783251231527"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SOo-Rt-mYH">
+            <objects>
+                <navigationController storyboardIdentifier="TrackCarViewController" automaticallyAdjustsScrollViewInsets="NO" id="8wK-EB-MKZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6m8-zb-b0T">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LCa-Ex-0wv" kind="relationship" relationship="rootViewController" id="OJt-nU-vbX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7AQ-GT-7jp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.6" y="-151.47783251231527"/>
         </scene>
     </scenes>
     <resources>
         <image name="chevron.backward.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,6 +8,7 @@
 import Foundation
 
 struct userModel: Codable {
+    let uid: String
     let carColor: String
     let carType:  String
     let driverName: String
