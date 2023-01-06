@@ -27,6 +27,7 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
     func loadAllCars() {
         
         let user = loadLocaluserData()
+        carsList.removeAll()
         
         firebase.SetRefernce(ref: Database.database().reference().child("vehicles"))
         firebase.observerDataWithoutListner { [weak self] snapshot in
@@ -42,9 +43,6 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
             for i in value.values {
                 dictArr.append(i as! [String:Any])
             }
-            
-            print(dictArr.toJSONString())
-            
             
             let jsonData = dictArr.toJSONString().data(using: String.Encoding.utf8)
             
@@ -68,8 +66,9 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = carsList[indexPath.row].driverName
+        let cell: suggestionCell = tableView.dequeueReusableCell(withIdentifier:  cellIdentifier, for: indexPath) as! suggestionCell
+        
+        cell.ConfigureCell(ob: carsList[indexPath.row], currenctlati: currentlatitude, currentlong: currentlongitude)
         
         return cell
     }

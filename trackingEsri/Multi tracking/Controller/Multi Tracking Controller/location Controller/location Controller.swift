@@ -30,6 +30,9 @@ extension TrackCarViewController: CLLocationManagerDelegate {
         if l.horizontalAccuracy > 0 {
             print("Long = \(l.coordinate.longitude) latitude = \(l.coordinate.latitude)")
             
+            currentlatitude  = l.coordinate.latitude
+            currentlongitude = l.coordinate.longitude
+            
             let user = loadLocaluserData()
             
             let point = AGSPoint(x: l.coordinate.longitude, y: l.coordinate.latitude, spatialReference: .wgs84())
@@ -56,6 +59,7 @@ extension TrackCarViewController: CLLocationManagerDelegate {
                             "driverName": user!.driverName,
                             "telephone" : user!.telephone,
                             "cartype"   : user!.carName,
+                            "carColor": user!.colorName,
                             "latitude"  : lati,
                             "longitude" : long
                           ] as! [String: Any]

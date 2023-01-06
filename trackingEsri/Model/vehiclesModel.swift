@@ -11,4 +11,5 @@ struct vehiclesModel: Codable {
     let cartype, driverName: String
     let latitude, longitude: Double
     let telephone, uuid: String
+    let carColor: String
 }

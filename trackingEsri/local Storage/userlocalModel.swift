@@ -15,6 +15,7 @@ struct UserlocalModel: Codable, Storeable {
     let carName: String
     let liecenceNumber: String
     let password: String
+    let colorName: String
     
     var storeData: Data? {
         let encoder = JSONEncoder()
@@ -22,13 +23,14 @@ struct UserlocalModel: Codable, Storeable {
         return encoded
     }
     
-    init(telephone: String,driverName: String, carName: String, liecenceNumber: String, password: String,uid: String) {
+    init(telephone: String,driverName: String, carName: String, liecenceNumber: String, password: String,uid: String,colorName: String) {
         self.uid = uid
         self.telephone = telephone
         self.driverName = driverName
         self.carName = carName
         self.liecenceNumber = liecenceNumber
         self.password = password
+        self.colorName = colorName
     }
     
     init?(storeData: Data?) {

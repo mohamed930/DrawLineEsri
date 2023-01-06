@@ -82,7 +82,7 @@ class CarDetailsViewController: UIViewController {
         firebase.write(value: data) { [weak self] in
             guard let self = self else { return }
             
-            let userlocalmodel = UserlocalModel(telephone: self.data["telephone"] as! String, driverName: self.data["driverName"] as! String, carName: self.data["carType"] as! String, liecenceNumber: self.data["licenceNumber"] as! String, password: self.data["password"] as! String,uid: uuid)
+            let userlocalmodel = UserlocalModel(telephone: self.data["telephone"] as! String, driverName: self.data["driverName"] as! String, carName: self.data["carType"] as! String, liecenceNumber: self.data["licenceNumber"] as! String, password: self.data["password"] as! String,uid: uuid,colorName: self.data["carColor"] as! String)
             
             self.storage.writeStoreable(key: LocalStorageKeys.user, value: userlocalmodel)
             

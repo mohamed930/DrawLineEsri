@@ -21,6 +21,11 @@ class TrackCarViewController: UIViewController {
     var locationManager: CLLocationManager!
     var firebase = Firebase()
     var carsList = Array<vehiclesModel>()
+    
+    let cellIdentifier  = "Cell"
+    let cellNibFileName = "suggestionCell"
+    var currentlatitude  = 0.0
+    var currentlongitude = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,5 +63,7 @@ class TrackCarViewController: UIViewController {
     func ResgestertableView() {
         suggestionTableView.dataSource = self
         suggestionTableView.delegate   = self
+        
+        suggestionTableView.register(UINib(nibName: cellNibFileName, bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
 }
