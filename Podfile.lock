@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.5.0)
   - ArcGIS-Runtime-SDK-iOS (100.14)
   - BCryptSwift (1.1)
   - Colorful (3.0.0)
@@ -33,6 +34,7 @@ PODS:
   - PromisesObjC (2.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - ArcGIS-Runtime-SDK-iOS
   - BCryptSwift
   - Colorful
@@ -42,6 +44,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - ArcGIS-Runtime-SDK-iOS
     - BCryptSwift
     - Colorful
@@ -57,6 +60,7 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   ArcGIS-Runtime-SDK-iOS: a2dc9c8202952fa58a1c9f1c2ded58887bea07b1
   BCryptSwift: f69992ea5685f6714260842c2770688043b89ab2
   Colorful: 9e093edacaa9fb73512ad9da157f0707b82d2542
@@ -71,6 +75,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: bbbcb88164a333502b6aba66c3c4bba1727184ad
+PODFILE CHECKSUM: 96dd24603e3302c553c6309b0996dd2ea9863f1e
 
 COCOAPODS: 1.11.3

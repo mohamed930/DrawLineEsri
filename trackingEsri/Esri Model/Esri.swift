@@ -10,7 +10,8 @@ import Foundation
 
 class Esri {
     
-    let mapView: AGSMapView!
+    private let api_key = "AAPK4e7cff31848045c08118ee9141e02188tPhTR2prd3o3aJcA3Ubbw2Zi2OghuIIw_LXulPMGPRNd1jIbeb-npYAYORM97hyz"
+    let mapView: AGSMapView?
     private var graphicsOverlay = AGSGraphicsOverlay()
     private var routeParameters: AGSRouteParameters!
     var routeTask = AGSRouteTask(url: URL(string: "https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World")!)
@@ -22,21 +23,33 @@ class Esri {
         self.mapView = mapView
     }
     
-    func getGraphocsOverlay() -> AGSGraphicsOverlay {
+    init() {
+        mapView = nil
+    }
+    
+    func getApiKey() -> String {
+        return api_key
+    }
+    
+    func getGraphicsOverlay() -> AGSGraphicsOverlay {
         return graphicsOverlay
+    }
+    
+    func setGraphicsOverlay(graphicsOverlay: AGSGraphicsOverlay) {
+        self.graphicsOverlay = graphicsOverlay
     }
     
     func showMap(lati: Double, long: Double) {
         // Create an instance of a map with ESRI topographic basemap.
-        mapView.map = AGSMap(basemapStyle: .arcGISNavigation)
+        mapView!.map = AGSMap(basemapStyle: .arcGISImagery) // arcGISNavigation
         // mapView.touchDelegate = self
 
         // Add the graphics overlay.
-        mapView.graphicsOverlays.add(graphicsOverlay)
-        mapView.graphicsOverlays.add(routeGraphicsOverlay)
+        mapView!.graphicsOverlays.add(graphicsOverlay)
+        mapView!.graphicsOverlays.add(routeGraphicsOverlay)
         
         // Zoom to a specific extent.
-        mapView.setViewpoint(AGSViewpoint(center: AGSPoint(x: long, y: lati, spatialReference: .wgs84()), scale: 5e4))
+        mapView!.setViewpoint(AGSViewpoint(center: AGSPoint(x: long, y: lati, spatialReference: .wgs84()), scale: 5e4))
     }
     
     func AddPointOnMap(point: AGSPoint,attribute: [String: AnyObject]) {
@@ -49,12 +62,13 @@ class Esri {
         graphicsOverlay.graphics.add(graphic)
         
         graphicsOverlay.isVisible = true
-        mapView.setViewpointGeometry(graphicsOverlay.extent, padding: 30, completion: nil)
+        
+        mapView!.setViewpointGeometry(graphicsOverlay.extent, padding: 30, completion: nil)
     }
     
     func ShowCalloutForPoint(graphic: AGSGraphic,point: AGSPoint) {
         // Hide the callout.
-        mapView.callout.dismiss()
+        mapView!.callout.dismiss()
         
         self.showCalloutForGraphic(graphic, tapLocation: point)
     }
@@ -103,11 +117,11 @@ class Esri {
         let cityString = graphic.attributes["title"] as? String ?? ""
        // let addressString = graphic.attributes["Address"] as? String ?? ""
         
-        mapView.callout.title = cityString
+        mapView!.callout.title = cityString
         // mapView.callout.detail = addressString
         
-        mapView.callout.isAccessoryButtonHidden = true
-        mapView.callout.show(for: graphic, tapLocation: tapLocation, animated: true)
+        mapView!.callout.isAccessoryButtonHidden = true
+        mapView!.callout.show(for: graphic, tapLocation: tapLocation, animated: true)
     }
     // -------------------------------------------
     
@@ -126,20 +140,22 @@ class Esri {
         }
 
         // set parameters to return directions
-        routeParameters.returnDirections = true
+        routeParameters?.returnDirections = true
 
         // clear previous routes
         routeGraphicsOverlay.graphics.removeAllObjects()
 
         // clear previous stops
-        routeParameters.clearStops()
+        routeParameters?.clearStops()
 
         // set the stops
         let stop1 = AGSStop(point: points[0])
         stop1.name = "Origin"
         let stop2 = AGSStop(point: points[1])
         stop2.name = "Destination"
-        routeParameters.setStops([stop1, stop2])
+        routeParameters?.setStops([stop1, stop2])
+        
+        guard let routeParameters = routeParameters else {return}
 
         self.routeTask.solveRoute(with: routeParameters) { [weak self] (routeResult: AGSRouteResult?, error: Error?) in
             guard let self = self else { return }
@@ -150,7 +166,7 @@ class Esri {
                 // also save a reference to the route object
                 // in order to access directions
                 self.generatedRoute = route
-                let routeGraphic = AGSGraphic(geometry: self.generatedRoute.routeGeometry, symbol: self.routeSymbol(), attributes: nil)
+                let routeGraphic = AGSGraphic(geometry: self.generatedRoute?.routeGeometry, symbol: self.routeSymbol(), attributes: nil)
                 self.routeGraphicsOverlay.graphics.add(routeGraphic)
             }
         }

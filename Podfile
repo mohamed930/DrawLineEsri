@@ -13,5 +13,6 @@ target 'trackingEsri' do
   pod "BCryptSwift"
   pod "Colorful"
   pod 'lottie-ios'
+  pod 'Alamofire'
 
 end

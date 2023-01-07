@@ -17,7 +17,7 @@ extension TrackCarViewController: CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.allowsBackgroundLocationUpdates = false
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
@@ -32,6 +32,9 @@ extension TrackCarViewController: CLLocationManagerDelegate {
             
             currentlatitude  = l.coordinate.latitude
             currentlongitude = l.coordinate.longitude
+            
+            locationManager.stopUpdatingLocation()
+            locationManager = nil
             
             let user = loadLocaluserData()
             

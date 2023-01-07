@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8B49EC11C06EFCB69AB4D402 /* Pods_trackingEsri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33339151202147B7BDF93831 /* Pods_trackingEsri.framework */; };
+		D31E433B2969B3AB00238491 /* placeNameSuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E43392969B3AB00238491 /* placeNameSuggestionCell.swift */; };
+		D31E433C2969B3AB00238491 /* placeNameSuggestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31E433A2969B3AB00238491 /* placeNameSuggestionCell.xib */; };
+		D31E433F2969CB9200238491 /* suggestionDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E433E2969CB9100238491 /* suggestionDetailsModel.swift */; };
 		D31F786F2942603800E02FD5 /* GeoCoderMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */; };
 		D323446D2968414E00EDA517 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323446C2968414E00EDA517 /* String.swift */; };
 		D334235B296616D100E78663 /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334235A296616D100E78663 /* userModel.swift */; };
@@ -15,8 +18,8 @@
 		D341696F296757630025BF78 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341696E296757630025BF78 /* LocalStorage.swift */; };
 		D3416971296757C60025BF78 /* userlocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3416970296757C60025BF78 /* userlocalModel.swift */; };
 		D34BB7E5294B961F003927C0 /* CompersionTwoRoutesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34BB7E4294B961F003927C0 /* CompersionTwoRoutesExtensions.swift */; };
-		D35461CD2968288100A8D4D9 /* suggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35461CB2968288100A8D4D9 /* suggestionCell.swift */; };
-		D35461CE2968288100A8D4D9 /* suggestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35461CC2968288100A8D4D9 /* suggestionCell.xib */; };
+		D35461CD2968288100A8D4D9 /* carsuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35461CB2968288100A8D4D9 /* carsuggestionCell.swift */; };
+		D35461CE2968288100A8D4D9 /* carsuggestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35461CC2968288100A8D4D9 /* carsuggestionCell.xib */; };
 		D35B68902964AEEA000F7238 /* MultiTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35B688F2964AEEA000F7238 /* MultiTracking.storyboard */; };
 		D35B68932964AF37000F7238 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B68922964AF37000F7238 /* loginViewController.swift */; };
 		D372AC00294B73ED00C31EBB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D372ABFF294B73ED00C31EBB /* GoogleService-Info.plist */; };
@@ -34,6 +37,7 @@
 		D3A1089929679C4800EE086C /* collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1089829679C4800EE086C /* collection.swift */; };
 		D3CEA5302958CA2900D5F2BA /* NavigateRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEA52F2958CA2900D5F2BA /* NavigateRouteViewController.swift */; };
 		D3CEA5322958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEA5312958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift */; };
+		D3D3A2542969AE9B003077B9 /* suggestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D3A2532969AE9B003077B9 /* suggestionModel.swift */; };
 		D3EB736D296635C00060CE36 /* TrackCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB736C296635C00060CE36 /* TrackCarViewController.swift */; };
 		D3EF7E7E29684FFB003C40C7 /* gps.json in Resources */ = {isa = PBXBuildFile; fileRef = D3EF7E7D29684FFB003C40C7 /* gps.json */; };
 		D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A1294107B900331AD5 /* AppDelegate.swift */; };
@@ -49,6 +53,9 @@
 		33339151202147B7BDF93831 /* Pods_trackingEsri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trackingEsri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B109ADB9F01CAE1498FAEE1 /* Pods-trackingEsri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trackingEsri.release.xcconfig"; path = "Target Support Files/Pods-trackingEsri/Pods-trackingEsri.release.xcconfig"; sourceTree = "<group>"; };
 		829DEB84850843C5C43C69C1 /* Pods-trackingEsri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trackingEsri.debug.xcconfig"; path = "Target Support Files/Pods-trackingEsri/Pods-trackingEsri.debug.xcconfig"; sourceTree = "<group>"; };
+		D31E43392969B3AB00238491 /* placeNameSuggestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeNameSuggestionCell.swift; sourceTree = "<group>"; };
+		D31E433A2969B3AB00238491 /* placeNameSuggestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = placeNameSuggestionCell.xib; sourceTree = "<group>"; };
+		D31E433E2969CB9100238491 /* suggestionDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestionDetailsModel.swift; sourceTree = "<group>"; };
 		D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoderMapViewController.swift; sourceTree = "<group>"; };
 		D323446C2968414E00EDA517 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D334235A296616D100E78663 /* userModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
@@ -56,8 +63,8 @@
 		D341696E296757630025BF78 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		D3416970296757C60025BF78 /* userlocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userlocalModel.swift; sourceTree = "<group>"; };
 		D34BB7E4294B961F003927C0 /* CompersionTwoRoutesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompersionTwoRoutesExtensions.swift; sourceTree = "<group>"; };
-		D35461CB2968288100A8D4D9 /* suggestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestionCell.swift; sourceTree = "<group>"; };
-		D35461CC2968288100A8D4D9 /* suggestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = suggestionCell.xib; sourceTree = "<group>"; };
+		D35461CB2968288100A8D4D9 /* carsuggestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carsuggestionCell.swift; sourceTree = "<group>"; };
+		D35461CC2968288100A8D4D9 /* carsuggestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = carsuggestionCell.xib; sourceTree = "<group>"; };
 		D35B688F2964AEEA000F7238 /* MultiTracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MultiTracking.storyboard; sourceTree = "<group>"; };
 		D35B68922964AF37000F7238 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		D372ABFF294B73ED00C31EBB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 		D3A1089829679C4800EE086C /* collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collection.swift; sourceTree = "<group>"; };
 		D3CEA52F2958CA2900D5F2BA /* NavigateRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateRouteViewController.swift; sourceTree = "<group>"; };
 		D3CEA5312958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateRouteViewControllerExtension.swift; sourceTree = "<group>"; };
+		D3D3A2532969AE9B003077B9 /* suggestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestionModel.swift; sourceTree = "<group>"; };
 		D3EB736C296635C00060CE36 /* TrackCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCarViewController.swift; sourceTree = "<group>"; };
 		D3EF7E7D29684FFB003C40C7 /* gps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gps.json; sourceTree = "<group>"; };
 		D3F1B39E294107B900331AD5 /* trackingEsri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trackingEsri.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +125,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D31E433D2969B3B000238491 /* place name */ = {
+			isa = PBXGroup;
+			children = (
+				D31E43392969B3AB00238491 /* placeNameSuggestionCell.swift */,
+				D31E433A2969B3AB00238491 /* placeNameSuggestionCell.xib */,
+			);
+			path = "place name";
+			sourceTree = "<group>";
+		};
 		D323446E2968416300EDA517 /* Extensions + UICutoms */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,8 +167,8 @@
 		D35461CA2968285C00A8D4D9 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				D35461CB2968288100A8D4D9 /* suggestionCell.swift */,
-				D35461CC2968288100A8D4D9 /* suggestionCell.xib */,
+				D3D3A2552969B20A003077B9 /* car suggestion */,
+				D31E433D2969B3B000238491 /* place name */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -243,6 +260,15 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		D3D3A2552969B20A003077B9 /* car suggestion */ = {
+			isa = PBXGroup;
+			children = (
+				D35461CB2968288100A8D4D9 /* carsuggestionCell.swift */,
+				D35461CC2968288100A8D4D9 /* carsuggestionCell.xib */,
+			);
+			path = "car suggestion";
+			sourceTree = "<group>";
+		};
 		D3F1B395294107B900331AD5 = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +352,8 @@
 				D372AC04294B78AF00C31EBB /* responseModel.swift */,
 				D334235A296616D100E78663 /* userModel.swift */,
 				D3A108962967955900EE086C /* vehiclesModel.swift */,
+				D3D3A2532969AE9B003077B9 /* suggestionModel.swift */,
+				D31E433E2969CB9100238491 /* suggestionDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,9 +422,10 @@
 				D372AC00294B73ED00C31EBB /* GoogleService-Info.plist in Resources */,
 				D3EF7E7E29684FFB003C40C7 /* gps.json in Resources */,
 				D38FC6FB2957063700E62017 /* track.gpx in Resources */,
-				D35461CE2968288100A8D4D9 /* suggestionCell.xib in Resources */,
+				D35461CE2968288100A8D4D9 /* carsuggestionCell.xib in Resources */,
 				D35B68902964AEEA000F7238 /* MultiTracking.storyboard in Resources */,
 				D3F1B3AB294107BB00331AD5 /* Assets.xcassets in Resources */,
+				D31E433C2969B3AB00238491 /* placeNameSuggestionCell.xib in Resources */,
 				D3F1B3A9294107B900331AD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,22 +484,25 @@
 				D3416971296757C60025BF78 /* userlocalModel.swift in Sources */,
 				D323446D2968414E00EDA517 /* String.swift in Sources */,
 				D39F7C27294B5E0D00C132CD /* Esri.swift in Sources */,
+				D3D3A2542969AE9B003077B9 /* suggestionModel.swift in Sources */,
 				D3CEA5322958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift in Sources */,
 				D3F1B3A6294107B900331AD5 /* MapViewController.swift in Sources */,
 				D372AC03294B756F00C31EBB /* Firebase.swift in Sources */,
 				D3EB736D296635C00060CE36 /* TrackCarViewController.swift in Sources */,
+				D31E433F2969CB9200238491 /* suggestionDetailsModel.swift in Sources */,
 				D398C5382964EDF8009F31DB /* UIColor.swift in Sources */,
 				D31F786F2942603800E02FD5 /* GeoCoderMapViewController.swift in Sources */,
 				D334235B296616D100E78663 /* userModel.swift in Sources */,
 				D39F7C24294B5D5100C132CD /* CompersionTwoRoutesViewController.swift in Sources */,
 				D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */,
+				D31E433B2969B3AB00238491 /* placeNameSuggestionCell.swift in Sources */,
 				D341696D2967573D0025BF78 /* LocalStorageProtocol.swift in Sources */,
 				D38FC6FD29570B8F00E62017 /* BackgroundThread.swift in Sources */,
 				D3A1089229678D4200EE086C /* location Controller.swift in Sources */,
 				D3CEA5302958CA2900D5F2BA /* NavigateRouteViewController.swift in Sources */,
 				D3A1089929679C4800EE086C /* collection.swift in Sources */,
 				D372AC05294B78AF00C31EBB /* responseModel.swift in Sources */,
-				D35461CD2968288100A8D4D9 /* suggestionCell.swift in Sources */,
+				D35461CD2968288100A8D4D9 /* carsuggestionCell.swift in Sources */,
 				D3A108972967955900EE086C /* vehiclesModel.swift in Sources */,
 				D39EA9892964D360002282C6 /* CarDetailsViewController.swift in Sources */,
 				D3A1089529678DBC00EE086C /* Search And Suggestion Controller.swift in Sources */,

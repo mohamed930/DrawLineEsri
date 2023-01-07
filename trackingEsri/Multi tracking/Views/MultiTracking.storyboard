@@ -270,7 +270,7 @@
                                     <constraint firstAttribute="bottom" secondItem="6ml-s6-lOI" secondAttribute="bottom" id="rcs-2Z-EDy"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-u2-zdV">
+                            <searchBar contentMode="redraw" placeholder="اسم المحافظة ,اسم الحي,العنوان" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-u2-zdV">
                                 <rect key="frame" x="0.0" y="88" width="375" height="51"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </searchBar>

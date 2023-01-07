@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SuggestCell" rowHeight="63" id="KGk-i7-Jjw" customClass="placeNameSuggestionCell" customModule="trackingEsri" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="63"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="428" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ey-bH-F3Q">
+                        <rect key="frame" x="20" y="11" width="43" height="41"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43.5" id="4dF-nQ-RrI"/>
+                            <constraint firstAttribute="width" constant="43" id="fk4-aS-UTP"/>
+                        </constraints>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal">
+                            <imageReference key="backgroundImage" image="arrow.up.forward.app.fill" catalog="system" symbolScale="default"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم المكان" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="zJH-v2-q2C">
+                        <rect key="frame" x="71" y="21.5" width="337" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zJH-v2-q2C" firstAttribute="leading" secondItem="1ey-bH-F3Q" secondAttribute="trailing" constant="8" symbolic="YES" id="8gR-Bh-2pz"/>
+                    <constraint firstAttribute="trailing" secondItem="zJH-v2-q2C" secondAttribute="trailing" constant="20" symbolic="YES" id="8k5-qJ-Mw3"/>
+                    <constraint firstAttribute="bottom" secondItem="1ey-bH-F3Q" secondAttribute="bottom" constant="9.5" id="BpK-Qv-iQ2"/>
+                    <constraint firstItem="zJH-v2-q2C" firstAttribute="centerY" secondItem="1ey-bH-F3Q" secondAttribute="centerY" id="Sjp-Pi-NJq"/>
+                    <constraint firstItem="1ey-bH-F3Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="bjP-sd-AHv"/>
+                    <constraint firstItem="1ey-bH-F3Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="nbN-w1-5f3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="copyTextButton" destination="1ey-bH-F3Q" id="vSR-yF-KYY"/>
+                <outlet property="placeNameLabel" destination="zJH-v2-q2C" id="Cc0-XA-fsM"/>
+            </connections>
+            <point key="canvasLocation" x="210.1449275362319" y="63.28125"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow.up.forward.app.fill" catalog="system" width="128" height="114"/>
+    </resources>
+</document>

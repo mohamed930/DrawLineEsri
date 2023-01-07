@@ -9,7 +9,7 @@ import UIKit
 import CoreLocation
 import Lottie
 
-class suggestionCell: UITableViewCell {
+class carsuggestionCell: UITableViewCell {
     
     @IBOutlet weak var locationImageView:AnimationView!
     @IBOutlet weak var locationDistanceLabel:UILabel!

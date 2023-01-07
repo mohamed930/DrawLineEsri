@@ -13,9 +13,11 @@ import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    let esri = Esri()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        AGSArcGISRuntimeEnvironment.apiKey = api_key
+        AGSArcGISRuntimeEnvironment.apiKey = esri.getApiKey()
         FirebaseApp.configure()
         
         IQKeyboardManager.shared.enable = true

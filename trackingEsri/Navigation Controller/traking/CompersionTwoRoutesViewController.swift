@@ -130,7 +130,7 @@ class CompersionTwoRoutesViewController: UIViewController {
 extension CompersionTwoRoutesViewController: AGSGeoViewTouchDelegate {
     func geoView(_ geoView: AGSGeoView, didTapAtScreenPoint screenPoint: CGPoint, mapPoint: AGSPoint) {
         // Normalize point.
-        geoView.identify(esri.getGraphocsOverlay(), screenPoint: screenPoint, tolerance: 12, returnPopupsOnly: false) { [weak self] result in
+        geoView.identify(esri.getGraphicsOverlay(), screenPoint: screenPoint, tolerance: 12, returnPopupsOnly: false) { [weak self] result in
             guard let self = self else { return }
                         
             guard let point = result.graphics.first else {

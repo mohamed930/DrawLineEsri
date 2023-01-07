@@ -21,11 +21,17 @@ class TrackCarViewController: UIViewController {
     var locationManager: CLLocationManager!
     var firebase = Firebase()
     var carsList = Array<vehiclesModel>()
+    var suggestionList = Array<suggestionModel>()
+    let api_link = "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest"
+    let api_details_link = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates"
     
     let cellIdentifier  = "Cell"
-    let cellNibFileName = "suggestionCell"
+    let cellNibFileName = "carsuggestionCell"
+    let placecellIdentifier  = "SuggestCell"
+    let placecellNibFileName = "placeNameSuggestionCell"
     var currentlatitude  = 0.0
     var currentlongitude = 0.0
+    var selectedIndexPath = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,5 +71,6 @@ class TrackCarViewController: UIViewController {
         suggestionTableView.delegate   = self
         
         suggestionTableView.register(UINib(nibName: cellNibFileName, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        suggestionTableView.register(UINib(nibName: placecellNibFileName, bundle: nil), forCellReuseIdentifier: placecellIdentifier)
     }
 }

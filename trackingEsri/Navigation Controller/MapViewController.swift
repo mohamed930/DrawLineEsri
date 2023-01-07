@@ -8,7 +8,7 @@
 import UIKit
 import ArcGIS
 
-let api_key = "AAPK4e7cff31848045c08118ee9141e02188tPhTR2prd3o3aJcA3Ubbw2Zi2OghuIIw_LXulPMGPRNd1jIbeb-npYAYORM97hyz"
+
 
 class MapViewController: UIViewController {
     
