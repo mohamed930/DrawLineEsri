@@ -23,32 +23,17 @@ extension TrackCarViewController: CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
     // -------------------------------------------
-    
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let l = locations[locations.count - 1]
-        if l.horizontalAccuracy > 0 {
-            print("Long = \(l.coordinate.longitude) latitude = \(l.coordinate.latitude)")
+        
+    func ShowUserLocation() {
+        self.map.locationDisplay.start {[weak self] error in
+            guard let self = self else {return}
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            self.map.locationDisplay.autoPanMode = .recenter
             
-            currentlatitude  = l.coordinate.latitude
-            currentlongitude = l.coordinate.longitude
-            
-            locationManager.stopUpdatingLocation()
-            locationManager = nil
-            
-            let user = loadLocaluserData()
-            
-            let point = AGSPoint(x: l.coordinate.longitude, y: l.coordinate.latitude, spatialReference: .wgs84())
-            let data = ["driveName": user!.driverName, "carType": user!.carName, "telephone": user!.telephone] as! [String: AnyObject]
-            
-            esrisdk.AddPointOnMap(point: point, attribute: data)
-            AddPointToDatabase(lati: l.coordinate.latitude, long: l.coordinate.longitude)
         }
-    }
-    
-    //Write the didFailWithError method here:
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
     }
     
     func AddPointToDatabase(lati: Double, long: Double) {
@@ -68,5 +53,28 @@ extension TrackCarViewController: CLLocationManagerDelegate {
                           ] as! [String: Any]
         
         firebase.write(value: vehicleData, complention: {})
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let l = locations[locations.count - 1]
+        if l.horizontalAccuracy > 0 {
+            print("Long = \(l.coordinate.longitude) latitude = \(l.coordinate.latitude)")
+            
+            currentlatitude  = l.coordinate.latitude
+            currentlongitude = l.coordinate.longitude
+            
+            locationManager.stopUpdatingLocation()
+            locationManager = nil
+            
+            let point = AGSPoint(x: l.coordinate.longitude, y: l.coordinate.latitude, spatialReference: .wgs84())
+            
+           // esrisdk.AddPointOnMap(point: point, attribute: data)
+            esrisdk.points.append(point)
+        }
+    }
+    
+    //Write the didFailWithError method here:
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
 }

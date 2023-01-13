@@ -33,8 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = nextVc
             self.window = window
             window.makeKeyAndVisible()
-
         }
+
+        
     }
     
     func LoadLoaclStorage(completion: @escaping (UserlocalModel?) -> ()) {
@@ -78,4 +79,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-

@@ -35,9 +35,10 @@ class TrackCarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         SetMessageToUser()
         loadMap()
+        ShowUserLocation()
         ConfigureLocation()
         MakeSearchBarRtl()
         ResgestertableView()

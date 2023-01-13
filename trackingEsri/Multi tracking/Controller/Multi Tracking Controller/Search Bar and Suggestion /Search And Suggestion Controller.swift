@@ -12,23 +12,30 @@ import ArcGIS
 
 extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: TODO: This Method For Handle SearchButton In Keypad.
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.searchTextField.text!.contains(",") {
             SearchDetailsPlaceAndShowOnMap(suggestId: suggestionList[selectedIndexPath].magicKey)
         }
         else {
-            searchBar.searchTextField.resignFirstResponder()
-            suggestionView.isHidden = !suggestionView.isHidden
+            ListenToCarMoving(carId: carsList[selectedIndexPath].uuid)
         }
     }
+    // -------------------------------------------
     
+    
+    // MARK: TODO: This Method Recognize user beging the search show all car suggestion near him
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         suggestionView.isHidden = !suggestionView.isHidden
         loadAllCars()
         
         return true
     }
+    // -------------------------------------------
     
+    
+    
+    // MARK: TODO: This Method for when user start typing give him some suggestion from Esri API.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // load Suggesstions from Esri Api.
         if searchBar.searchTextField.text != "" {
@@ -58,13 +65,16 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
                 
             }
         }
+        // Return to show the car suggestion
         else {
             suggestionView.isHidden = false
             suggestionTableView.reloadData()
         }
     }
+    // -------------------------------------------
     
     
+    // MARK: TODO: This Method For Load all car from firebase and show it to user in tableView.
     func loadAllCars() {
         
         let user = loadLocaluserData()
@@ -100,8 +110,12 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
             self.suggestionTableView.reloadData()
         }
     }
+    // -------------------------------------------
     
     
+    
+    // MARK: TODO: This Mwthod for Load items in table based on searchBar status.
+    // -------------------------------------------
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchBar.searchTextField.text == "" {
             return carsList.count
@@ -143,23 +157,30 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
         }
         
     }
+    // -------------------------------------------
     
+    
+    // MARK: TODO: This Method For Action the show title button in custom Cell.
     @objc func ShowtitleButton (_ sender:UIButton) {
         let myIndexPath = NSIndexPath(row: sender.tag, section: 0)
         
-        if (searchBar.searchTextField.text == "") {
+        selectedIndexPath = myIndexPath.row
+        
+        if ((suggestionTableView.cellForRow(at: myIndexPath as IndexPath) as? carsuggestionCell) != nil) {
             searchBar.searchTextField.text = carsList[myIndexPath.row].driverName
         }
         else {
             searchBar.searchTextField.text = suggestionList[myIndexPath.row].text
         }
-                    
-        
     }
+    // -------------------------------------------
     
+    
+    
+    // MARK: TODO: This Method For Show button to call the captin of car if user want it.
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        if searchBar.searchTextField.text == "" {
+        if (tableView.cellForRow(at: indexPath) as? carsuggestionCell) != nil {
             let contextItem = UIContextualAction(style: .normal, title: "") { [weak self]  (contextualAction, view, boolValue) in
                 //Code I want to do here
                 guard let self = self else { return }
@@ -184,21 +205,36 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
             return nil
         }
     }
+    // -------------------------------------------
     
     
+    
+    
+    // MARK: TODO: This Method For tableView to handle the cell tapped in tableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if searchBar.searchTextField.text != "" {
+        
+        // in case the searchBar have place name show the place in map as an static place
+        if ((suggestionTableView.cellForRow(at: indexPath) as? placeNameSuggestionCell) != nil) {
             selectedIndexPath = indexPath.row
             let suggestId = suggestionList[selectedIndexPath].magicKey
             searchBar.searchTextField.text = suggestionList[selectedIndexPath].text
             SearchDetailsPlaceAndShowOnMap(suggestId: suggestId)
         }
+        // in case the searchBar have car captine show the car in map as an dynamic place
         else {
+            selectedIndexPath = indexPath.row
+            let id = carsList[selectedIndexPath].uuid
             
+            searchBar.searchTextField.text = carsList[selectedIndexPath].driverName
+            ListenToCarMoving(carId: id)
         }
     }
+    // -------------------------------------------
     
     
+    
+    
+    // MARK: TODO: This Place load the place point in the map and show the route between of them
     func SearchDetailsPlaceAndShowOnMap(suggestId: String) {
         searchBar.searchTextField.resignFirstResponder()
         suggestionView.isHidden = !suggestionView.isHidden
@@ -225,12 +261,14 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
                             "Place_addr": responseObj.candidates[0].attributes.placeAddr
                            ] as! [String:AnyObject]
                 
-                let graphic = self.esrisdk.getGraphicsOverlay()
-                if graphic.graphics.count == 2 {
+                
+                if self.esrisdk.points.count == 2 {
+                    let graphic = self.esrisdk.getGraphicsOverlay()
                     graphic.graphics.removeLastObject()
                     self.esrisdk.setGraphicsOverlay(graphicsOverlay: graphic)
                     self.esrisdk.points.removeLast()
                 }
+                
                 
                 self.esrisdk.AddPointOnMap(point: AGSPoint(x: responseObj.candidates[0].location.x, y: responseObj.candidates[0].location.y, spatialReference: .wgs84()), attribute: attr)
                 
@@ -242,4 +280,52 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
             }
         }
     }
+    // -------------------------------------------
+    
+    
+    
+    
+    // MARK: TODO: This Method Add Listner To car and track it on the map.
+    func ListenToCarMoving(carId: String) {
+        
+        suggestionView.isHidden = !suggestionView.isHidden
+        searchBar.searchTextField.resignFirstResponder()
+        
+        firebase.SetRefernce(ref: Database.database().reference().child("vehicles").child(carId))
+        
+        firebase.observeDataWithListner { [weak self] snapshot in
+            guard let self = self else { return }
+            
+            guard let value = snapshot.value else {
+                print("Error in fetch")
+                return
+            }
+            
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: value, options: []) else { return }
+            
+            guard let responseObj = try? JSONDecoder().decode(vehiclesModel.self, from: jsonData) else {
+                print("Error in Decode")
+                return}
+            
+            print("driverName: \(responseObj.driverName) , location: (\(responseObj.latitude),\(responseObj.longitude)")
+            
+
+            if self.esrisdk.points.count == 2 {
+                let ngraphic = self.esrisdk.getGraphicsOverlay()
+                ngraphic.graphics.removeLastObject()
+                self.esrisdk.setGraphicsOverlay(graphicsOverlay: ngraphic)
+                self.esrisdk.points.removeLast()
+            }
+            
+            let data = ["driveName": responseObj.driverName, "carType": responseObj.cartype, "telephone": responseObj.telephone] as! [String: AnyObject]
+            
+
+            self.esrisdk.AddPointOnMap(point: AGSPoint(x: responseObj.longitude, y: responseObj.latitude, spatialReference: .wgs84()), attribute: data)
+            
+            
+            self.esrisdk.getDefaultParameters()
+            
+        }
+    }
+    // -------------------------------------------
 }

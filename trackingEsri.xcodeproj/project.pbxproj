@@ -14,6 +14,7 @@
 		D31F786F2942603800E02FD5 /* GeoCoderMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */; };
 		D323446D2968414E00EDA517 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323446C2968414E00EDA517 /* String.swift */; };
 		D334235B296616D100E78663 /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334235A296616D100E78663 /* userModel.swift */; };
+		D33847D5296B11EC0036A2EF /* testRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33847D4296B11EC0036A2EF /* testRouteViewController.swift */; };
 		D341696D2967573D0025BF78 /* LocalStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341696C2967573D0025BF78 /* LocalStorageProtocol.swift */; };
 		D341696F296757630025BF78 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341696E296757630025BF78 /* LocalStorage.swift */; };
 		D3416971296757C60025BF78 /* userlocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3416970296757C60025BF78 /* userlocalModel.swift */; };
@@ -59,6 +60,7 @@
 		D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoderMapViewController.swift; sourceTree = "<group>"; };
 		D323446C2968414E00EDA517 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D334235A296616D100E78663 /* userModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
+		D33847D4296B11EC0036A2EF /* testRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRouteViewController.swift; sourceTree = "<group>"; };
 		D341696C2967573D0025BF78 /* LocalStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageProtocol.swift; sourceTree = "<group>"; };
 		D341696E296757630025BF78 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		D3416970296757C60025BF78 /* userlocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userlocalModel.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 				D323446C2968414E00EDA517 /* String.swift */,
 			);
 			path = "Extensions + UICutoms";
+			sourceTree = "<group>";
+		};
+		D33847D6296B120E0036A2EF /* test route */ = {
+			isa = PBXGroup;
+			children = (
+				D33847D4296B11EC0036A2EF /* testRouteViewController.swift */,
+			);
+			path = "test route";
 			sourceTree = "<group>";
 		};
 		D341696B296757220025BF78 /* local Storage */ = {
@@ -319,6 +329,7 @@
 				D31F786E2942603800E02FD5 /* GeoCoderMapViewController.swift */,
 				D34BB7E3294B9603003927C0 /* traking */,
 				D3CEA52E2958CA0A00D5F2BA /* Navigation */,
+				D33847D6296B120E0036A2EF /* test route */,
 				D3F1B3A7294107B900331AD5 /* Main.storyboard */,
 			);
 			path = "Navigation Controller";
@@ -508,6 +519,7 @@
 				D3A1089529678DBC00EE086C /* Search And Suggestion Controller.swift in Sources */,
 				D3F1B3BB29410B4500331AD5 /* pointModel.swift in Sources */,
 				D3F1B3A4294107B900331AD5 /* SceneDelegate.swift in Sources */,
+				D33847D5296B11EC0036A2EF /* testRouteViewController.swift in Sources */,
 				D34BB7E5294B961F003927C0 /* CompersionTwoRoutesExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
