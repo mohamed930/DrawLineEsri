@@ -31,6 +31,8 @@ class NavigationModel {
     
     private var stops: [stoppointsModel]!
     
+    static private var graphicsOverlay: AGSGraphicsOverlay!
+    
     private var AGSRouteTrackerDelegate: AGSRouteTrackerDelegate!
     private var AGSLocationChangeHandlerDelegate: AGSLocationChangeHandlerDelegate!
     
@@ -69,11 +71,34 @@ class NavigationModel {
     
     func SetRoutesUI(aheadStyleType: AGSSimpleLineSymbolStyle, aheadcolor: UIColor, aheadwidth: CGFloat, traveledStyle: AGSSimpleLineSymbolStyle, traveledColor: UIColor) {
         
-        self.mapView.graphicsOverlays.removeAllObjects()
         
-        routeAheadGraphic = AGSGraphic(geometry: nil, symbol: AGSSimpleLineSymbol(style: .dash, color: .systemPurple, width: aheadwidth))
+        guard let graphicsOverlay = NavigationModel.graphicsOverlay else {
+            
+            routeAheadGraphic = AGSGraphic(geometry: nil, symbol: AGSSimpleLineSymbol(style: .dash, color: aheadcolor, width: aheadwidth), attributes: ["route": "r1"])
+            
+            
+            
+            routeTraveledGraphic = AGSGraphic(geometry: nil, symbol: AGSSimpleLineSymbol(style: traveledStyle, color: traveledColor, width: aheadwidth),attributes: ["route": "r2"])
+            
+            
+            
+            self.mapView.graphicsOverlays.add(makeRouteOverlay())
+            
+            return
+        }
         
-        routeTraveledGraphic = AGSGraphic(geometry: nil, symbol: AGSSimpleLineSymbol(style: traveledStyle, color: traveledColor, width: aheadwidth))
+        graphicsOverlay.graphics.removeAllObjects()
+        
+        self.mapView.graphicsOverlays.add(graphicsOverlay)
+
+        
+        routeAheadGraphic = AGSGraphic(geometry: nil, symbol: AGSSimpleLineSymbol(style: .dash, color: aheadcolor, width: aheadwidth), attributes: ["route": "r1"])
+        
+        
+        
+        routeTraveledGraphic = AGSGraphic(geometry: nil, symbol: AGSSimpleLineSymbol(style: traveledStyle, color: traveledColor, width: aheadwidth),attributes: ["route": "r2"])
+        
+        
         
         self.mapView.graphicsOverlays.add(makeRouteOverlay())
     }
@@ -304,6 +329,8 @@ class NavigationModel {
         let routeGraphics = [routeAheadGraphic, routeTraveledGraphic]
         // Add graphics to the graphics overlay.
         graphicsOverlay.graphics.addObjects(from: routeGraphics as [Any])
+        
+        NavigationModel.graphicsOverlay = graphicsOverlay
         return graphicsOverlay
     }
 }
