@@ -16,6 +16,13 @@ class TrackCarViewController: UIViewController {
     @IBOutlet weak var suggestionView: UIView!
     @IBOutlet weak var suggestionTableView: UITableView!
     
+    @IBOutlet weak var routesView:UIView!
+    @IBOutlet weak var routesLabel:UILabel!
+    @IBOutlet weak var navigationBar:UIToolbar!
+    @IBOutlet var navigateBarButtonItem: UIBarButtonItem!
+    @IBOutlet var resetBarButtonItem: UIBarButtonItem!
+    @IBOutlet var recenterBarButtonItem: UIBarButtonItem!
+    
     let storage: LocalStorageProtocol = LocalStorage()
     var esrisdk: Esri!
     var locationManager: CLLocationManager!
@@ -32,6 +39,20 @@ class TrackCarViewController: UIViewController {
     var currentlatitude  = 0.0
     var currentlongitude = 0.0
     var selectedIndexPath = 0
+    var userLocation: locationModel!
+    var Navi: NavigationModel!
+    
+    // The graphic to represent the route that's been traveled (initially empty).
+    let routeTraveledGraphic = AGSGraphic(geometry: nil, symbol: AGSSimpleLineSymbol(style: .solid, color: .systemBlue, width: 3))
+    // A formatter to format a time value into human readable string.
+    let timeFormatter: DateComponentsFormatter = {
+       let formatter = DateComponentsFormatter()
+       formatter.allowedUnits = [.hour, .minute, .second]
+       formatter.unitsStyle = .full
+       return formatter
+    }()
+    // An AVSpeechSynthesizer for text to speech.
+    let speechSynthesizer = AVSpeechSynthesizer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +63,7 @@ class TrackCarViewController: UIViewController {
         ConfigureLocation()
         MakeSearchBarRtl()
         ResgestertableView()
+        NavigationAction()
     }
     
     func loadLocaluserData() -> UserlocalModel? {
@@ -73,5 +95,26 @@ class TrackCarViewController: UIViewController {
         
         suggestionTableView.register(UINib(nibName: cellNibFileName, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         suggestionTableView.register(UINib(nibName: placecellNibFileName, bundle: nil), forCellReuseIdentifier: placecellIdentifier)
+    }
+    
+    func NavigationAction() {
+        navigationBar.isHidden = true
+        routesView.isHidden   = true
+        routesView.layer.cornerRadius = 7
+        routesView.layer.masksToBounds = true
+    }
+    
+    @IBAction func navigationButtonAction(_ sender: Any) {
+        routesView.isHidden = false
+        Navi.startNavigation()
+    }
+    
+    @IBAction func stopNavigationButtonAction(_ sender: Any) {
+        routesView.isHidden = true
+        Navi.reset()
+    }
+    
+    @IBAction func recenterButtonAction(_ sender: Any) {
+        Navi.recenter()
     }
 }

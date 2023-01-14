@@ -70,6 +70,8 @@ extension TrackCarViewController: CLLocationManagerDelegate {
             
            // esrisdk.AddPointOnMap(point: point, attribute: data)
             esrisdk.points.append(point)
+            
+            userLocation = locationModel(lati: l.coordinate.latitude, long: l.coordinate.longitude)
         }
     }
     

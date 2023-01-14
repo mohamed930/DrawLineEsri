@@ -272,7 +272,9 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
                 
                 self.esrisdk.AddPointOnMap(point: AGSPoint(x: responseObj.candidates[0].location.x, y: responseObj.candidates[0].location.y, spatialReference: .wgs84()), attribute: attr)
                 
-                self.esrisdk.getDefaultParameters()
+                self.navigationBar.isHidden = false
+                
+                self.LoadRoute(detinationPlace: locationModel(lati: responseObj.candidates[0].location.y, long: responseObj.candidates[0].location.x),detinationName: responseObj.candidates[0].attributes.placeAddr)
                 
             }
             else {
@@ -322,10 +324,40 @@ extension TrackCarViewController: UISearchBarDelegate , UITableViewDataSource, U
 
             self.esrisdk.AddPointOnMap(point: AGSPoint(x: responseObj.longitude, y: responseObj.latitude, spatialReference: .wgs84()), attribute: data)
             
+            self.navigationBar.isHidden = false
             
-            self.esrisdk.getDefaultParameters()
+            self.LoadRoute(detinationPlace: locationModel(lati: responseObj.latitude, long: responseObj.longitude),detinationName: responseObj.driverName)
             
         }
     }
     // -------------------------------------------
+    
+    func LoadRoute(detinationPlace: locationModel,detinationName: String) {
+        let stops = [stoppointsModel(
+                                        point: AGSStop(point: AGSPoint(x: userLocation.long, y: userLocation.lati, spatialReference: .wgs84())),
+                                        name: "your location"
+                                    ),
+                     stoppointsModel(
+                                        point: AGSStop(point: AGSPoint(x: detinationPlace.long, y: detinationPlace.lati, spatialReference: .wgs84())),
+                                        name: detinationName
+                                    )
+                    ]
+        
+        
+        Navi = NavigationModel(
+                                   mapView: map,
+                                   navigateBarButtonItem: navigateBarButtonItem,
+                                   resetBarButtonItem: resetBarButtonItem,
+                                   recenterBarButtonItem: recenterBarButtonItem,
+                                   statusLabel: routesLabel,
+                                   stops: stops,
+                                   AGSRouteTrackerDelegate: self,
+                                   AGSLocationChangeHandlerDelegate: self
+                                  )
+        
+        
+        Navi.SetRoutesUI(aheadStyleType: .solid, aheadcolor: .blue, aheadwidth: 5, traveledStyle: .solid, traveledColor: .red)
+        
+        Navi.ShowRouteLine()
+    }
 }

@@ -32,6 +32,9 @@
 		D39EA9892964D360002282C6 /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EA9882964D360002282C6 /* CarDetailsViewController.swift */; };
 		D39F7C24294B5D5100C132CD /* CompersionTwoRoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F7C23294B5D5100C132CD /* CompersionTwoRoutesViewController.swift */; };
 		D39F7C27294B5E0D00C132CD /* Esri.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F7C26294B5E0D00C132CD /* Esri.swift */; };
+		D39FD0442971D2CE005F4ED0 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FD0432971D2CE005F4ED0 /* NavigationModel.swift */; };
+		D39FD0462971D426005F4ED0 /* stoppointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FD0452971D426005F4ED0 /* stoppointsModel.swift */; };
+		D39FD0492971E06B005F4ED0 /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FD0482971E06B005F4ED0 /* NavigationDelegate.swift */; };
 		D3A1089229678D4200EE086C /* location Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1089129678D4200EE086C /* location Controller.swift */; };
 		D3A1089529678DBC00EE086C /* Search And Suggestion Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1089429678DBC00EE086C /* Search And Suggestion Controller.swift */; };
 		D3A108972967955900EE086C /* vehiclesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A108962967955900EE086C /* vehiclesModel.swift */; };
@@ -78,6 +81,9 @@
 		D39EA9882964D360002282C6 /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
 		D39F7C23294B5D5100C132CD /* CompersionTwoRoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompersionTwoRoutesViewController.swift; sourceTree = "<group>"; };
 		D39F7C26294B5E0D00C132CD /* Esri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esri.swift; sourceTree = "<group>"; };
+		D39FD0432971D2CE005F4ED0 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
+		D39FD0452971D426005F4ED0 /* stoppointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stoppointsModel.swift; sourceTree = "<group>"; };
+		D39FD0482971E06B005F4ED0 /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 		D3A1089129678D4200EE086C /* location Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "location Controller.swift"; sourceTree = "<group>"; };
 		D3A1089429678DBC00EE086C /* Search And Suggestion Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search And Suggestion Controller.swift"; sourceTree = "<group>"; };
 		D3A108962967955900EE086C /* vehiclesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vehiclesModel.swift; sourceTree = "<group>"; };
@@ -223,8 +229,18 @@
 			isa = PBXGroup;
 			children = (
 				D39F7C26294B5E0D00C132CD /* Esri.swift */,
+				D39FD0432971D2CE005F4ED0 /* NavigationModel.swift */,
+				D39FD0452971D426005F4ED0 /* stoppointsModel.swift */,
 			);
 			path = "Esri Model";
+			sourceTree = "<group>";
+		};
+		D39FD0472971E04D005F4ED0 /* Navigation Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D39FD0482971E06B005F4ED0 /* NavigationDelegate.swift */,
+			);
+			path = "Navigation Delegate";
 			sourceTree = "<group>";
 		};
 		D3A1088E29678CBC00EE086C /* Multi Tracking View Controller */ = {
@@ -241,6 +257,7 @@
 				D3A1088E29678CBC00EE086C /* Multi Tracking View Controller */,
 				D3A1089029678CE300EE086C /* location Controller */,
 				D3A1089329678D9E00EE086C /* Search Bar and Suggestion  */,
+				D39FD0472971E04D005F4ED0 /* Navigation Delegate */,
 			);
 			path = "Multi Tracking Controller";
 			sourceTree = "<group>";
@@ -507,6 +524,7 @@
 				D39F7C24294B5D5100C132CD /* CompersionTwoRoutesViewController.swift in Sources */,
 				D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */,
 				D31E433B2969B3AB00238491 /* placeNameSuggestionCell.swift in Sources */,
+				D39FD0442971D2CE005F4ED0 /* NavigationModel.swift in Sources */,
 				D341696D2967573D0025BF78 /* LocalStorageProtocol.swift in Sources */,
 				D38FC6FD29570B8F00E62017 /* BackgroundThread.swift in Sources */,
 				D3A1089229678D4200EE086C /* location Controller.swift in Sources */,
@@ -517,9 +535,11 @@
 				D3A108972967955900EE086C /* vehiclesModel.swift in Sources */,
 				D39EA9892964D360002282C6 /* CarDetailsViewController.swift in Sources */,
 				D3A1089529678DBC00EE086C /* Search And Suggestion Controller.swift in Sources */,
+				D39FD0492971E06B005F4ED0 /* NavigationDelegate.swift in Sources */,
 				D3F1B3BB29410B4500331AD5 /* pointModel.swift in Sources */,
 				D3F1B3A4294107B900331AD5 /* SceneDelegate.swift in Sources */,
 				D33847D5296B11EC0036A2EF /* testRouteViewController.swift in Sources */,
+				D39FD0462971D426005F4ED0 /* stoppointsModel.swift in Sources */,
 				D34BB7E5294B961F003927C0 /* CompersionTwoRoutesExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -254,7 +254,35 @@
                                 <rect key="frame" x="0.0" y="139" width="375" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE2-XX-Ucj">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNb-pT-yMw">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <items>
+                                    <barButtonItem title="Stop" id="mqE-f5-Psl">
+                                        <connections>
+                                            <action selector="stopNavigationButtonAction:" destination="LCa-Ex-0wv" id="Gbi-dx-npq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="E4o-Xb-jtY"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="U47-Rd-7D9"/>
+                                    <barButtonItem title="Navigate" id="3HW-Zv-nde">
+                                        <connections>
+                                            <action selector="navigationButtonAction:" destination="LCa-Ex-0wv" id="eaP-xI-1NP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="H9u-12-Ze9"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="xjd-yb-Z8b"/>
+                                    <barButtonItem title="Recentre" id="7SN-lF-duN">
+                                        <connections>
+                                            <action selector="recenterButtonAction:" destination="LCa-Ex-0wv" id="Hp0-C3-Huy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <searchBar contentMode="redraw" placeholder="اسم المحافظة ,اسم الحي,العنوان" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-u2-zdV">
+                                <rect key="frame" x="0.0" y="88" width="375" height="51"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </searchBar>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE2-XX-Ucj">
                                 <rect key="frame" x="0.0" y="139" width="375" height="673"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6ml-s6-lOI">
@@ -270,10 +298,27 @@
                                     <constraint firstAttribute="bottom" secondItem="6ml-s6-lOI" secondAttribute="bottom" id="rcs-2Z-EDy"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" placeholder="اسم المحافظة ,اسم الحي,العنوان" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-u2-zdV">
-                                <rect key="frame" x="0.0" y="88" width="375" height="51"/>
-                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                            </searchBar>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guH-x1-UT2">
+                                <rect key="frame" x="10" y="154" width="355" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmJ-xg-s2d">
+                                        <rect key="frame" x="8" y="8" width="339" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="wnO-t1-9gC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="0.50594153060000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="SmJ-xg-s2d" firstAttribute="top" secondItem="guH-x1-UT2" secondAttribute="top" constant="8" id="QVJ-DI-grv"/>
+                                    <constraint firstAttribute="bottom" secondItem="SmJ-xg-s2d" secondAttribute="bottom" constant="8" id="YSi-YC-vSE"/>
+                                    <constraint firstItem="SmJ-xg-s2d" firstAttribute="leading" secondItem="guH-x1-UT2" secondAttribute="leading" constant="8" id="aKp-7Y-NQl"/>
+                                    <constraint firstAttribute="trailing" secondItem="SmJ-xg-s2d" secondAttribute="trailing" constant="8" id="s6q-Ht-c5L"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1JW-tH-gcI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -287,8 +332,14 @@
                             <constraint firstAttribute="bottom" secondItem="GNA-vv-UNZ" secondAttribute="bottom" id="P0z-um-fVp"/>
                             <constraint firstItem="JxE-u2-zdV" firstAttribute="top" secondItem="1JW-tH-gcI" secondAttribute="top" id="Zjd-da-gBE"/>
                             <constraint firstItem="GNA-vv-UNZ" firstAttribute="top" secondItem="JxE-u2-zdV" secondAttribute="bottom" id="aPO-6s-sMx"/>
+                            <constraint firstItem="1JW-tH-gcI" firstAttribute="trailing" secondItem="guH-x1-UT2" secondAttribute="trailing" constant="10" id="bPX-ou-Kgv"/>
+                            <constraint firstItem="LNb-pT-yMw" firstAttribute="trailing" secondItem="1JW-tH-gcI" secondAttribute="trailing" id="kWN-ig-DAc"/>
                             <constraint firstItem="1JW-tH-gcI" firstAttribute="trailing" secondItem="GNA-vv-UNZ" secondAttribute="trailing" id="lLg-Go-8tL"/>
+                            <constraint firstItem="LNb-pT-yMw" firstAttribute="leading" secondItem="1JW-tH-gcI" secondAttribute="leading" id="p6v-ex-gbj"/>
+                            <constraint firstItem="1JW-tH-gcI" firstAttribute="bottom" secondItem="LNb-pT-yMw" secondAttribute="bottom" id="q0L-mx-Ovq"/>
                             <constraint firstItem="JxE-u2-zdV" firstAttribute="leading" secondItem="1JW-tH-gcI" secondAttribute="leading" id="vPu-h1-23G"/>
+                            <constraint firstItem="guH-x1-UT2" firstAttribute="top" secondItem="JxE-u2-zdV" secondAttribute="bottom" constant="15" id="xSG-FF-Uii"/>
+                            <constraint firstItem="guH-x1-UT2" firstAttribute="leading" secondItem="1JW-tH-gcI" secondAttribute="leading" constant="10" id="zOH-3G-DeJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="اهلا يا احمد" id="bOe-n1-Hw4">
@@ -304,6 +355,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="map" destination="GNA-vv-UNZ" id="VoP-Ef-Ogq"/>
+                        <outlet property="navigateBarButtonItem" destination="3HW-Zv-nde" id="PHc-2i-IKN"/>
+                        <outlet property="navigationBar" destination="LNb-pT-yMw" id="2TG-e3-oC6"/>
+                        <outlet property="recenterBarButtonItem" destination="7SN-lF-duN" id="reB-I0-B8Z"/>
+                        <outlet property="resetBarButtonItem" destination="mqE-f5-Psl" id="uul-NV-0qV"/>
+                        <outlet property="routesLabel" destination="SmJ-xg-s2d" id="sQ3-SO-r8m"/>
+                        <outlet property="routesView" destination="guH-x1-UT2" id="kgC-nW-PDc"/>
                         <outlet property="searchBar" destination="JxE-u2-zdV" id="5Ak-Pq-0tD"/>
                         <outlet property="suggestionTableView" destination="6ml-s6-lOI" id="es5-HZ-mYb"/>
                         <outlet property="suggestionView" destination="fE2-XX-Ucj" id="Cs9-xu-Prr"/>

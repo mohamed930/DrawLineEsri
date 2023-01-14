@@ -81,9 +81,17 @@ class Esri {
                 print(error)
             } else {
                 // on completion store the parameters
-                self.routeParameters = params
+                guard let params = params else { return }
                 
+                params.returnDirections = true
+                params.returnStops = true
+                params.returnRoutes = true
+                params.outputSpatialReference = .wgs84()
+                
+                self.routeParameters = params
+
                 self.ShowLine()
+                
             }
         }
     }
