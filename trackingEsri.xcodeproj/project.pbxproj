@@ -43,6 +43,7 @@
 		D3CEA5322958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEA5312958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift */; };
 		D3D3A2542969AE9B003077B9 /* suggestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D3A2532969AE9B003077B9 /* suggestionModel.swift */; };
 		D3EB736D296635C00060CE36 /* TrackCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB736C296635C00060CE36 /* TrackCarViewController.swift */; };
+		D3EDB58129AFEB3F00A83245 /* drawLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDB58029AFEB3F00A83245 /* drawLineViewController.swift */; };
 		D3EF7E7E29684FFB003C40C7 /* gps.json in Resources */ = {isa = PBXBuildFile; fileRef = D3EF7E7D29684FFB003C40C7 /* gps.json */; };
 		D3F1B3A2294107B900331AD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A1294107B900331AD5 /* AppDelegate.swift */; };
 		D3F1B3A4294107B900331AD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F1B3A3294107B900331AD5 /* SceneDelegate.swift */; };
@@ -92,6 +93,7 @@
 		D3CEA5312958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateRouteViewControllerExtension.swift; sourceTree = "<group>"; };
 		D3D3A2532969AE9B003077B9 /* suggestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suggestionModel.swift; sourceTree = "<group>"; };
 		D3EB736C296635C00060CE36 /* TrackCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCarViewController.swift; sourceTree = "<group>"; };
+		D3EDB58029AFEB3F00A83245 /* drawLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawLineViewController.swift; sourceTree = "<group>"; };
 		D3EF7E7D29684FFB003C40C7 /* gps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gps.json; sourceTree = "<group>"; };
 		D3F1B39E294107B900331AD5 /* trackingEsri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trackingEsri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F1B3A1294107B900331AD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				D33847D4296B11EC0036A2EF /* testRouteViewController.swift */,
+				D3EDB58029AFEB3F00A83245 /* drawLineViewController.swift */,
 			);
 			path = "test route";
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				D323446D2968414E00EDA517 /* String.swift in Sources */,
 				D39F7C27294B5E0D00C132CD /* Esri.swift in Sources */,
 				D3D3A2542969AE9B003077B9 /* suggestionModel.swift in Sources */,
+				D3EDB58129AFEB3F00A83245 /* drawLineViewController.swift in Sources */,
 				D3CEA5322958CEC200D5F2BA /* NavigateRouteViewControllerExtension.swift in Sources */,
 				D3F1B3A6294107B900331AD5 /* MapViewController.swift in Sources */,
 				D372AC03294B756F00C31EBB /* Firebase.swift in Sources */,
