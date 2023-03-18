@@ -12,3 +12,5 @@ Tracking In Esri Map SDK
 
 
 ## Search For Car and Simulation to track go to priject
+
+Track.mp4
