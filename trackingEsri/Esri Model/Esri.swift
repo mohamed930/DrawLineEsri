@@ -187,7 +187,7 @@ class Esri {
                 )
         
         let polylineSymbol = AGSSimpleLineSymbol(style: .solid, color: color, width: 3.0)
-        
+         
         let polylineGraphic = AGSGraphic(geometry: polyline, symbol: polylineSymbol)
         
         graphicsOverlay.graphics.add(polylineGraphic)
